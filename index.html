@@ -244,6 +244,12 @@ body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-
   font-size: 10px; padding: 2px 7px; border-radius: 4px;
   background: var(--faint); color: var(--muted); border: 1px solid var(--border);
 }
+.proj-links { display: flex; gap: 12px; margin-top: 10px; }
+.proj-link {
+  font-size: 11px; font-weight: 600; color: var(--teal);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+}
+.proj-link:hover { text-decoration: underline; }
 
 /* ── SKILLS ── */
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
@@ -781,6 +787,10 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">APIs</span><span class="proj-pill">Medallion Architecture</span><span class="proj-pill">Predictive Analytics</span><span class="proj-pill">BI Reporting</span>
         </div>
+        <div class="proj-links">
+          <a href="https://github.com/rahulmistry18/Reposea_container_optimizer" target="_blank" class="proj-link">GitHub ↗</a>
+          <a href="https://rahulmistry18.github.io/Reposea_container_optimizer/" target="_blank" class="proj-link">Live Dashboard ↗</a>
+        </div>
       </div>
 
       <div class="proj-card">
@@ -791,6 +801,10 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         <div class="proj-highlight">Mandate termination validation · Audit traceability</div>
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">Pandas</span><span class="proj-pill">NumPy</span><span class="proj-pill">Alteryx</span><span class="proj-pill">EMIR</span><span class="proj-pill">MiFID II</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/rahulmistry18/compliance-audit-data-automation" target="_blank" class="proj-link">GitHub ↗</a>
+          <a href="https://rahulmistry18.github.io/compliance-audit-data-automation/" target="_blank" class="proj-link">Live Demo ↗</a>
         </div>
       </div>
 
