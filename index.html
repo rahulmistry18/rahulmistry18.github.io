@@ -400,13 +400,13 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
 <div class="modal-overlay" id="contactModal" onclick="closeModal(event)">
   <div class="modal">
     <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">✕</button>
-    <div class="modal-title">Get in touch</div>
-    <div class="modal-sub">Choose how you'd like to reach out</div>
+    <div class="modal-title" data-i18n="nav-cta">Get in touch</div>
+    <div class="modal-sub" data-i18n="modal-sub">Choose how you'd like to reach out</div>
 
     <a href="mailto:mistarirahul18@gmail.com" class="modal-item">
       <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
       <div>
-        <span class="modal-item-label">Email</span>
+        <span class="modal-item-label" data-i18n="modal-email-label">Email</span>
         <span class="modal-item-val">mistarirahul18@gmail.com</span>
       </div>
     </a>
@@ -414,7 +414,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
     <a href="mailto:rahulmistry.18@gmail.com" class="modal-item">
       <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
       <div>
-        <span class="modal-item-label">Email (alternate)</span>
+        <span class="modal-item-label" data-i18n="modal-email-alt-label">Email (alternate)</span>
         <span class="modal-item-val">rahulmistry.18@gmail.com</span>
       </div>
     </a>
@@ -422,7 +422,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
     <a href="tel:+33745550792" class="modal-item">
       <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       <div>
-        <span class="modal-item-label">Phone · France</span>
+        <span class="modal-item-label" data-i18n="modal-phone-fr-label">Phone · France</span>
         <span class="modal-item-val">+33 7 45 55 07 92</span>
       </div>
     </a>
@@ -430,7 +430,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
     <a href="tel:+919730754785" class="modal-item">
       <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       <div>
-        <span class="modal-item-label">Phone · India</span>
+        <span class="modal-item-label" data-i18n="modal-phone-in-label">Phone · India</span>
         <span class="modal-item-val">+91 97307 54785</span>
       </div>
     </a>
@@ -620,14 +620,14 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
 
     <div class="hero-sidebar">
       <div class="scard">
-        <div class="scard-label">Location</div>
+        <div class="scard-label" data-i18n="loc-label">Location</div>
         <div class="scard-val">Rennes, France</div>
-        <div class="scard-sub">Available to relocate · Europe &amp; Asia</div>
+        <div class="scard-sub" data-i18n="loc-sub">Available to relocate · Europe &amp; Asia</div>
       </div>
       <div class="scard">
-        <div class="scard-label">Citizenship & Authorization</div>
-        <div class="scard-val">Indian Citizen</div>
-        <div class="scard-sub">Valid French work authorization · Open to Europe &amp; Asia</div>
+        <div class="scard-label" data-i18n="citizen-label">Citizenship & Authorization</div>
+        <div class="scard-val" data-i18n="citizen-val">Indian Citizen</div>
+        <div class="scard-sub" data-i18n="citizen-sub">Valid French work authorization · Open to Europe &amp; Asia</div>
       </div>
       <div class="scard">
         <div class="scard-label" data-i18n="lang-label">Languages</div>
@@ -639,7 +639,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="scard">
-        <div class="scard-label">Core stack</div>
+        <div class="scard-label" data-i18n="stack-label">Core stack</div>
         <div class="chip-row">
           <span class="chip-teal">Power BI</span>
           <span class="chip-teal">Python</span>
@@ -656,7 +656,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="scard">
-        <div class="scard-label">AI Tools &amp; Models</div>
+        <div class="scard-label" data-i18n="ai-label">AI Tools &amp; Models</div>
         <div class="chip-row">
           <span class="chip-grey">Claude Sonnet 4.5</span>
           <span class="chip-grey">Claude Haiku 4.5</span>
@@ -678,7 +678,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
   <div class="section" id="experience">
     <div class="section-head">
       <span class="section-num">01</span>
-      <h2 class="section-title">Experience</h2>
+      <h2 class="section-title" data-i18n="sec-exp">Experience</h2>
       <div class="section-rule"></div>
     </div>
     <div class="timeline">
@@ -687,16 +687,16 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         <div class="tl-meta">
           <div class="tl-period">Dec 2025 – Present</div>
           <div class="tl-company">Vearro Co.</div>
-          <div class="tl-location">Freelance · Remote</div>
+          <div class="tl-location" data-i18n="exp1-loc">Freelance · Remote</div>
         </div>
         <div class="tl-body">
-          <div class="tl-role">Freelance Data Analyst</div>
-          <span class="tl-badge">Consulting &amp; Analytics</span>
+          <div class="tl-role" data-i18n="exp1-role">Freelance Data Analyst</div>
+          <span class="tl-badge" data-i18n="exp1-badge">Consulting &amp; Analytics</span>
           <ul class="tl-list">
-            <li>Delivered end-to-end data analysis and reporting for 4 independent clients across fitness, sports, retail, and fintech domains</li>
-            <li>Built client-specific dashboards, segmentation models, and data pipelines tailored to each business's operational needs</li>
-            <li>Supported Summerpayami's retail expansion - analysis directly contributed to the launch of 2 new retail stores across Maharashtra</li>
-            <li>Gathered and structured trading data for Algobrics to improve algorithmic automation and signal accuracy</li>
+            <li data-i18n="exp1-li1">Delivered end-to-end data analysis and reporting for 4 independent clients across fitness, sports, retail, and fintech domains</li>
+            <li data-i18n="exp1-li2">Built client-specific dashboards, segmentation models, and data pipelines tailored to each business's operational needs</li>
+            <li data-i18n="exp1-li3">Supported Summerpayami's retail expansion - analysis directly contributed to the launch of 2 new retail stores across Maharashtra</li>
+            <li data-i18n="exp1-li4">Gathered and structured trading data for Algobrics to improve algorithmic automation and signal accuracy</li>
           </ul>
           <div class="tl-pills">
             <span class="tl-pill">Python</span><span class="tl-pill">SQL</span><span class="tl-pill">Excel</span><span class="tl-pill">Data Analysis</span><span class="tl-pill">Dashboard Design</span><span class="tl-pill">Client Consulting</span>
@@ -708,14 +708,14 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         <div class="tl-meta">
           <div class="tl-period">Apr 2025 – Oct 2025</div>
           <div class="tl-company">Archora</div>
-          <div class="tl-location">Mumbai, India</div>
+          <div class="tl-location" data-i18n="exp2-loc">Mumbai, India</div>
         </div>
         <div class="tl-body">
-          <div class="tl-role">Healthcare Data Analyst</div>
+          <div class="tl-role" data-i18n="exp2-role">Healthcare Data Analyst</div>
           <ul class="tl-list">
-            <li>Analyzed hospital operational data - patient flow, utilization, staffing - to improve cost efficiency and workflow performance</li>
-            <li>Built KPI tracking dashboards for project milestones, resource usage, and budget adherence</li>
-            <li>Partnered with architects, engineers, and hospital teams to translate operational data into actionable insights</li>
+            <li data-i18n="exp2-li1">Analyzed hospital operational data - patient flow, utilization, staffing - to improve cost efficiency and workflow performance</li>
+            <li data-i18n="exp2-li2">Built KPI tracking dashboards for project milestones, resource usage, and budget adherence</li>
+            <li data-i18n="exp2-li3">Partnered with architects, engineers, and hospital teams to translate operational data into actionable insights</li>
           </ul>
           <div class="tl-pills">
             <span class="tl-pill">Power BI</span><span class="tl-pill">KPI Tracking</span><span class="tl-pill">Healthcare Analytics</span><span class="tl-pill">Excel</span>
@@ -727,16 +727,16 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         <div class="tl-meta">
           <div class="tl-period">Feb 2024 – Aug 2024</div>
           <div class="tl-company">CMA CGM</div>
-          <div class="tl-location">Marseille, France</div>
+          <div class="tl-location" data-i18n="exp3-loc">Marseille, France</div>
         </div>
         <div class="tl-body">
-          <div class="tl-role">Data Analyst Intern</div>
-          <span class="tl-badge">Trade &amp; Quality Analytics</span>
+          <div class="tl-role" data-i18n="exp3-role">Data Analyst Intern</div>
+          <span class="tl-badge" data-i18n="exp3-badge">Trade &amp; Quality Analytics</span>
           <ul class="tl-list">
-            <li>Mined multi-source commercial and operational data for LATAM &amp; Oceania trade performance; delivered daily KPI reports and ad-hoc analyses to Business Development Managers</li>
-            <li>Handled trade compliance - classification and quality review of restricted commodities via HS codes; flagged and resolved exceptions cross-functionally</li>
-            <li>Built automated dashboards in Power BI, Qlik Sense, and Excel VBA, reducing manual effort and improving governance-ready stakeholder access</li>
-            <li>Supported post-signature data governance: validation checks, compliance reporting, process documentation, and mandate reporting accuracy</li>
+            <li data-i18n="exp3-li1">Mined multi-source commercial and operational data for LATAM &amp; Oceania trade performance; delivered daily KPI reports and ad-hoc analyses to Business Development Managers</li>
+            <li data-i18n="exp3-li2">Handled trade compliance - classification and quality review of restricted commodities via HS codes; flagged and resolved exceptions cross-functionally</li>
+            <li data-i18n="exp3-li3">Built automated dashboards in Power BI, Qlik Sense, and Excel VBA, reducing manual effort and improving governance-ready stakeholder access</li>
+            <li data-i18n="exp3-li4">Supported post-signature data governance: validation checks, compliance reporting, process documentation, and mandate reporting accuracy</li>
           </ul>
           <div class="tl-pills">
             <span class="tl-pill">Power BI</span><span class="tl-pill">Qlik Sense</span><span class="tl-pill">Excel VBA</span><span class="tl-pill">SQL</span><span class="tl-pill">Trade Compliance</span><span class="tl-pill">Data Governance</span>
@@ -748,13 +748,13 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         <div class="tl-meta">
           <div class="tl-period">Jan 2022 – Jun 2022</div>
           <div class="tl-company">Technocolabs Softwares</div>
-          <div class="tl-location">Indore, India</div>
+          <div class="tl-location" data-i18n="exp4-loc">Indore, India</div>
         </div>
         <div class="tl-body">
-          <div class="tl-role">Data Scientist Intern</div>
+          <div class="tl-role" data-i18n="exp4-role">Data Scientist Intern</div>
           <ul class="tl-list">
-            <li>Built ETL pipelines and ML models (Random Forest, 79% accuracy) using Python &amp; SQL on 50K+ records</li>
-            <li>Developed a Flask API prototype for AI-driven automation - early experience with agentic data workflows</li>
+            <li data-i18n="exp4-li1">Built ETL pipelines and ML models (Random Forest, 79% accuracy) using Python &amp; SQL on 50K+ records</li>
+            <li data-i18n="exp4-li2">Developed a Flask API prototype for AI-driven automation - early experience with agentic data workflows</li>
           </ul>
           <div class="tl-pills">
             <span class="tl-pill">Python</span><span class="tl-pill">SQL</span><span class="tl-pill">Random Forest</span><span class="tl-pill">Flask</span><span class="tl-pill">ETL</span>
@@ -773,17 +773,17 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
   <div class="section" id="projects">
     <div class="section-head">
       <span class="section-num">02</span>
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title" data-i18n="sec-proj">Projects</h2>
       <div class="section-rule"></div>
     </div>
     <div class="proj-grid">
 
       <div class="proj-card">
-        <div class="proj-cat">Data Engineering · BI</div>
+        <div class="proj-cat" data-i18n="proj1-cat">Data Engineering · BI</div>
         <div class="proj-title">RepoSea</div>
         <div class="proj-meta">Oct 2025 – Present · Personal</div>
-        <p class="proj-desc">Real-time stateful engine for container repositioning in maritime logistics. Medallion Architecture pipeline integrating AIS vessel ETAs, Freightos market indices, and ECB financial indicators with predictive ETA deviation alerts and per-diem cost impact analysis.</p>
-        <div class="proj-highlight">Human-in-the-Loop AI workflow · Multi-sheet BI decision reports</div>
+        <p class="proj-desc" data-i18n="proj1-desc">Real-time stateful engine for container repositioning in maritime logistics. Medallion Architecture pipeline integrating AIS vessel ETAs, Freightos market indices, and ECB financial indicators with predictive ETA deviation alerts and per-diem cost impact analysis.</p>
+        <div class="proj-highlight" data-i18n="proj1-highlight">Human-in-the-Loop AI workflow · Multi-sheet BI decision reports</div>
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">APIs</span><span class="proj-pill">Medallion Architecture</span><span class="proj-pill">Predictive Analytics</span><span class="proj-pill">BI Reporting</span>
         </div>
@@ -794,11 +794,11 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
       </div>
 
       <div class="proj-card">
-        <div class="proj-cat">AI Automation · Compliance</div>
+        <div class="proj-cat" data-i18n="proj2-cat">AI Automation · Compliance</div>
         <div class="proj-title">Audit Data Automation PoC</div>
         <div class="proj-meta">Jun 2023 · Rennes School of Business</div>
-        <p class="proj-desc">Agentic Python workflow for automated ledger validation and audit quality checks - bridging accounting and data analytics. Rule-based governance supporting EMIR &amp; MiFID II compliance frameworks with full audit traceability.</p>
-        <div class="proj-highlight">Mandate termination validation · Audit traceability</div>
+        <p class="proj-desc" data-i18n="proj2-desc">Agentic Python workflow for automated ledger validation and audit quality checks - bridging accounting and data analytics. Rule-based governance supporting EMIR &amp; MiFID II compliance frameworks with full audit traceability.</p>
+        <div class="proj-highlight" data-i18n="proj2-highlight">Mandate termination validation · Audit traceability</div>
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">Pandas</span><span class="proj-pill">NumPy</span><span class="proj-pill">Alteryx</span><span class="proj-pill">EMIR</span><span class="proj-pill">MiFID II</span>
         </div>
@@ -809,44 +809,44 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
       </div>
 
       <div class="proj-card">
-        <div class="proj-cat">Machine Learning · Finance</div>
+        <div class="proj-cat" data-i18n="proj3-cat">Machine Learning · Finance</div>
         <div class="proj-title">Forex Rate Prediction with AI</div>
         <div class="proj-meta">Jan – Oct 2023 · Rennes School of Business</div>
-        <p class="proj-desc">LSTM and Prophet models predicting EUR/JPY exchange rates on 20 years of Yahoo Finance data. Evaluated with RMSE - LSTM led on short-term, Prophet on long-term forecasts. Demonstrated AI synergy for reliable forex prediction.</p>
-        <div class="proj-highlight">LSTM + Prophet ensemble · 20yr historical analysis</div>
+        <p class="proj-desc" data-i18n="proj3-desc">LSTM and Prophet models predicting EUR/JPY exchange rates on 20 years of Yahoo Finance data. Evaluated with RMSE - LSTM led on short-term, Prophet on long-term forecasts. Demonstrated AI synergy for reliable forex prediction.</p>
+        <div class="proj-highlight" data-i18n="proj3-highlight">LSTM + Prophet ensemble · 20yr historical analysis</div>
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">LSTM</span><span class="proj-pill">Prophet</span><span class="proj-pill">Yahoo Finance API</span><span class="proj-pill">RMSE</span>
         </div>
       </div>
 
       <div class="proj-card">
-        <div class="proj-cat">Clustering · User Analytics</div>
+        <div class="proj-cat" data-i18n="proj4-cat">Clustering · User Analytics</div>
         <div class="proj-title">App User Segmentation</div>
         <div class="proj-meta">Oct 2023 · Rennes School of Business</div>
-        <p class="proj-desc">Analyzed user behavior data to segment app users by screen time and spending patterns. K-means clustering with Pandas and Plotly visualizations to reveal distinct user cohorts and behavioral drivers.</p>
-        <div class="proj-highlight">K-means clustering · Behavioral cohort analysis</div>
+        <p class="proj-desc" data-i18n="proj4-desc">Analyzed user behavior data to segment app users by screen time and spending patterns. K-means clustering with Pandas and Plotly visualizations to reveal distinct user cohorts and behavioral drivers.</p>
+        <div class="proj-highlight" data-i18n="proj4-highlight">K-means clustering · Behavioral cohort analysis</div>
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">Pandas</span><span class="proj-pill">Plotly</span><span class="proj-pill">K-means</span>
         </div>
       </div>
 
       <div class="proj-card">
-        <div class="proj-cat">Research · Analytics</div>
+        <div class="proj-cat" data-i18n="proj5-cat">Research · Analytics</div>
         <div class="proj-title">Gamer Loyalty &amp; Engagement Analytics</div>
         <div class="proj-meta">Mar – Oct 2023 · Rennes School of Business</div>
-        <p class="proj-desc">Mixed-method research surveying 300+ gamers and interviewing industry experts to identify loyalty drivers. Statistical analysis revealed community engagement, personalized experiences, and reward systems as key retention factors.</p>
-        <div class="proj-highlight">↑ 15–20% projected retention improvement</div>
+        <p class="proj-desc" data-i18n="proj5-desc">Mixed-method research surveying 300+ gamers and interviewing industry experts to identify loyalty drivers. Statistical analysis revealed community engagement, personalized experiences, and reward systems as key retention factors.</p>
+        <div class="proj-highlight" data-i18n="proj5-highlight">↑ 15–20% projected retention improvement</div>
         <div class="proj-pills">
           <span class="proj-pill">Statistical Analysis</span><span class="proj-pill">Survey Design</span><span class="proj-pill">Game Theory</span>
         </div>
       </div>
 
       <div class="proj-card">
-        <div class="proj-cat">Algorithmic Trading · Finance</div>
+        <div class="proj-cat" data-i18n="proj6-cat">Algorithmic Trading · Finance</div>
         <div class="proj-title">Algorithmic Forex Trading</div>
         <div class="proj-meta">Jun 2023 · Rennes School of Business</div>
-        <p class="proj-desc">Momentum-based algorithmic trading system for EUR/JPY - buy/sell signal generation from price momentum, Yahoo Finance API data retrieval, and interactive Plotly visualizations of price and momentum trends.</p>
-        <div class="proj-highlight">Momentum strategy · Automated signal generation</div>
+        <p class="proj-desc" data-i18n="proj6-desc">Momentum-based algorithmic trading system for EUR/JPY - buy/sell signal generation from price momentum, Yahoo Finance API data retrieval, and interactive Plotly visualizations of price and momentum trends.</p>
+        <div class="proj-highlight" data-i18n="proj6-highlight">Momentum strategy · Automated signal generation</div>
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">Yahoo Finance API</span><span class="proj-pill">Plotly</span><span class="proj-pill">Algo Trading</span>
         </div>
@@ -863,47 +863,47 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
   <div class="section" id="freelance">
     <div class="section-head">
       <span class="section-num">03</span>
-      <h2 class="section-title">Freelance &amp; Consulting</h2>
+      <h2 class="section-title" data-i18n="sec-free">Freelance &amp; Consulting</h2>
       <div class="section-rule"></div>
     </div>
     <div class="proj-grid">
 
       <div class="proj-card">
-        <div class="proj-cat">Health &amp; Wellness · Client Analytics</div>
+        <div class="proj-cat" data-i18n="free1-cat">Health &amp; Wellness · Client Analytics</div>
         <div class="proj-title">Yoganubhav</div>
-        <div class="proj-meta">Anuya Zende · Certified Yoga Instructor</div>
-        <p class="proj-desc">Analyzed student enrollment, session attendance, and engagement patterns to help a certified yoga instructor understand retention and growth trends. Delivered a clean reporting dashboard to track class performance and student progress over time.</p>
+        <div class="proj-meta" data-i18n="free1-meta">Anuya Zende · Certified Yoga Instructor</div>
+        <p class="proj-desc" data-i18n="free1-desc">Analyzed student enrollment, session attendance, and engagement patterns to help a certified yoga instructor understand retention and growth trends. Delivered a clean reporting dashboard to track class performance and student progress over time.</p>
         <div class="proj-pills">
           <span class="proj-pill">Excel</span><span class="proj-pill">Data Analysis</span><span class="proj-pill">Dashboard</span><span class="proj-pill">Retention Analytics</span>
         </div>
       </div>
 
       <div class="proj-card">
-        <div class="proj-cat">Sports Performance · Data Tracking</div>
+        <div class="proj-cat" data-i18n="free2-cat">Sports Performance · Data Tracking</div>
         <div class="proj-title">10x Shooting</div>
-        <div class="proj-meta">Abhijit Purav · Licensed Air Pistol Trainer</div>
-        <p class="proj-desc">Structured and analyzed athlete performance data for a licensed air pistol trainer. Built tracking models to identify performance trends, training consistency, and scoring patterns - enabling data-driven coaching decisions for competitive athletes.</p>
+        <div class="proj-meta" data-i18n="free2-meta">Abhijit Purav · Licensed Air Pistol Trainer</div>
+        <p class="proj-desc" data-i18n="free2-desc">Structured and analyzed athlete performance data for a licensed air pistol trainer. Built tracking models to identify performance trends, training consistency, and scoring patterns - enabling data-driven coaching decisions for competitive athletes.</p>
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">Performance Analytics</span><span class="proj-pill">Data Tracking</span><span class="proj-pill">Excel</span>
         </div>
       </div>
 
       <div class="proj-card">
-        <div class="proj-cat">Retail Expansion · Business Analytics</div>
+        <div class="proj-cat" data-i18n="free3-cat">Retail Expansion · Business Analytics</div>
         <div class="proj-title">Summerpayami</div>
-        <div class="proj-meta">Imported Cycle Retail Shop · Maharashtra</div>
-        <p class="proj-desc">Performed market and sales data analysis for an imported cycle retailer. Identified high-demand locations, customer segments, and revenue opportunities - insights that directly supported the successful launch of 2 new retail stores across Maharashtra.</p>
-        <div class="proj-highlight">↑ 2 new retail stores launched across Maharashtra</div>
+        <div class="proj-meta" data-i18n="free3-meta">Imported Cycle Retail Shop · Maharashtra</div>
+        <p class="proj-desc" data-i18n="free3-desc">Performed market and sales data analysis for an imported cycle retailer. Identified high-demand locations, customer segments, and revenue opportunities - insights that directly supported the successful launch of 2 new retail stores across Maharashtra.</p>
+        <div class="proj-highlight" data-i18n="free3-highlight">↑ 2 new retail stores launched across Maharashtra</div>
         <div class="proj-pills">
           <span class="proj-pill">SQL</span><span class="proj-pill">Market Analysis</span><span class="proj-pill">Retail Analytics</span><span class="proj-pill">Expansion Strategy</span>
         </div>
       </div>
 
       <div class="proj-card">
-        <div class="proj-cat">Fintech · Algorithmic Trading</div>
+        <div class="proj-cat" data-i18n="free4-cat">Fintech · Algorithmic Trading</div>
         <div class="proj-title">Algobrics</div>
-        <div class="proj-meta">Algorithm-based Trading Platform</div>
-        <p class="proj-desc">Gathered, cleaned, and structured financial market data to support an algorithm-based trading platform's automation pipeline. Improved data quality and coverage for better signal generation and reduced manual data handling in live trading workflows.</p>
+        <div class="proj-meta" data-i18n="free4-meta">Algorithm-based Trading Platform</div>
+        <p class="proj-desc" data-i18n="free4-desc">Gathered, cleaned, and structured financial market data to support an algorithm-based trading platform's automation pipeline. Improved data quality and coverage for better signal generation and reduced manual data handling in live trading workflows.</p>
         <div class="proj-pills">
           <span class="proj-pill">Python</span><span class="proj-pill">Data Collection</span><span class="proj-pill">Financial Data</span><span class="proj-pill">Automation</span><span class="proj-pill">ETL</span>
         </div>
@@ -920,12 +920,12 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
   <div class="section" id="skills">
     <div class="section-head">
       <span class="section-num">04</span>
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title" data-i18n="sec-skills">Skills</h2>
       <div class="section-rule"></div>
     </div>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-card-head">AI Tools &amp; LLMs</div>
+        <div class="skill-card-head" data-i18n="skill1-head">AI Tools &amp; LLMs</div>
         <div class="skill-chips">
           <span class="skill-chip">Claude (Sonnet 4.5, Haiku 4.5)</span>
           <span class="skill-chip">Gemini 2.0 Flash</span>
@@ -939,7 +939,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-head">Machine Learning &amp; Data Science</div>
+        <div class="skill-card-head" data-i18n="skill2-head">Machine Learning &amp; Data Science</div>
         <div class="skill-chips">
           <span class="skill-chip">Scikit-learn</span>
           <span class="skill-chip">XGBoost</span>
@@ -954,7 +954,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-head">Business Intelligence &amp; Excel</div>
+        <div class="skill-card-head" data-i18n="skill3-head">Business Intelligence &amp; Excel</div>
         <div class="skill-chips">
           <span class="skill-chip">Power BI</span>
           <span class="skill-chip">Tableau</span>
@@ -967,7 +967,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-head">Data Analysis</div>
+        <div class="skill-card-head" data-i18n="skill4-head">Data Analysis</div>
         <div class="skill-chips">
           <span class="skill-chip">SQL</span>
           <span class="skill-chip">Python</span>
@@ -980,7 +980,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-head">Data Management</div>
+        <div class="skill-card-head" data-i18n="skill5-head">Data Management</div>
         <div class="skill-chips">
           <span class="skill-chip">Data Validation</span>
           <span class="skill-chip">Data Modeling</span>
@@ -992,7 +992,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-head">Data Engineering</div>
+        <div class="skill-card-head" data-i18n="skill6-head">Data Engineering</div>
         <div class="skill-chips">
           <span class="skill-chip">ETL Pipelines</span>
           <span class="skill-chip">PySpark</span>
@@ -1004,7 +1004,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-head">Automation &amp; Collaboration</div>
+        <div class="skill-card-head" data-i18n="skill7-head">Automation &amp; Collaboration</div>
         <div class="skill-chips">
           <span class="skill-chip">Power Automate</span>
           <span class="skill-chip">SharePoint</span>
@@ -1016,7 +1016,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-head">Ways of Working</div>
+        <div class="skill-card-head" data-i18n="skill8-head">Ways of Working</div>
         <div class="skill-chips">
           <span class="skill-chip">Agile</span>
           <span class="skill-chip">Lean Process Improvement</span>
@@ -1037,22 +1037,22 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
   <div class="section" id="education">
     <div class="section-head">
       <span class="section-num">05</span>
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title" data-i18n="sec-edu">Education</h2>
       <div class="section-rule"></div>
     </div>
     <div class="edu-grid">
       <div class="edu-card">
-        <div class="edu-degree">MSc - Data &amp; Business Analytics (Finance)</div>
+        <div class="edu-degree" data-i18n="edu1-degree">MSc - Data &amp; Business Analytics (Finance)</div>
         <div class="edu-school">Rennes School of Business</div>
         <div class="edu-period">Sep 2022 – Aug 2024 · France</div>
       </div>
       <div class="edu-card">
-        <div class="edu-degree">Post Graduate Program in Data Science</div>
+        <div class="edu-degree" data-i18n="edu2-degree">Post Graduate Program in Data Science</div>
         <div class="edu-school">International School of Engineering</div>
         <div class="edu-period">Nov 2020 – Jun 2022 · India</div>
       </div>
       <div class="edu-card">
-        <div class="edu-degree">Bachelor of Engineering - Electrical Engineering</div>
+        <div class="edu-degree" data-i18n="edu3-degree">Bachelor of Engineering - Electrical Engineering</div>
         <div class="edu-school">University of Pune</div>
         <div class="edu-period">Aug 2014 – Nov 2020 · India</div>
       </div>
@@ -1067,9 +1067,9 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
   <div class="section" id="contact" style="padding-bottom: 0;">
     <div class="contact-band">
       <div class="contact-left">
-        <div class="contact-sup">Available now</div>
-        <div class="contact-headline">Let's build something<br><em>with data.</em></div>
-        <p class="contact-note">Open to full-time and contract roles in data analytics, analytics engineering, and BI.<br>Based in Rennes, France - available to relocate across Europe and Asia.</p>
+        <div class="contact-sup" data-i18n="contact-sup">Available now</div>
+        <div class="contact-headline" data-i18n="contact-head">Let's build something<br><em>with data.</em></div>
+        <p class="contact-note" data-i18n="contact-note">Open to full-time and contract roles in data analytics, analytics engineering, and BI.<br>Based in Rennes, France - available to relocate across Europe and Asia.</p>
       </div>
       <div class="contact-links">
         <a href="mailto:mistarirahul18@gmail.com" class="clink">
@@ -1100,7 +1100,7 @@ footer a { color: inherit; text-decoration: underline; text-underline-offset: 3p
 <footer>
   © 2025 Rahul Mistari ·
   <a href="https://github.com/rahulmistry18" target="_blank">github.com/rahulmistry18</a> ·
-  Deployed on GitHub Pages
+  <span data-i18n="footer-deploy">Deployed on GitHub Pages</span>
 </footer>
 
 <script>
@@ -1128,9 +1128,113 @@ const translations = {
     'email-btn':  'Email me',
     'proj-btn':   'View projects ↓',
     'lang-label': 'Languages',
+
+    'loc-label':      'Location',
+    'loc-sub':        'Available to relocate · Europe & Asia',
+    'citizen-label':  'Citizenship & Authorization',
+    'citizen-val':    'Indian Citizen',
+    'citizen-sub':    'Valid French work authorization · Open to Europe & Asia',
+    'stack-label':    'Core stack',
+    'ai-label':       'AI Tools & Models',
+
+    'sec-exp':    'Experience',
+    'sec-proj':   'Projects',
+    'sec-free':   'Freelance & Consulting',
+    'sec-skills': 'Skills',
+    'sec-edu':    'Education',
+
+    'exp1-loc':   'Freelance · Remote',
+    'exp1-role':  'Freelance Data Analyst',
+    'exp1-badge': 'Consulting & Analytics',
+    'exp1-li1':   'Delivered end-to-end data analysis and reporting for 4 independent clients across fitness, sports, retail, and fintech domains',
+    'exp1-li2':   "Built client-specific dashboards, segmentation models, and data pipelines tailored to each business's operational needs",
+    'exp1-li3':   "Supported Summerpayami's retail expansion - analysis directly contributed to the launch of 2 new retail stores across Maharashtra",
+    'exp1-li4':   'Gathered and structured trading data for Algobrics to improve algorithmic automation and signal accuracy',
+
+    'exp2-loc':   'Mumbai, India',
+    'exp2-role':  'Healthcare Data Analyst',
+    'exp2-li1':   'Analyzed hospital operational data - patient flow, utilization, staffing - to improve cost efficiency and workflow performance',
+    'exp2-li2':   'Built KPI tracking dashboards for project milestones, resource usage, and budget adherence',
+    'exp2-li3':   'Partnered with architects, engineers, and hospital teams to translate operational data into actionable insights',
+
+    'exp3-loc':   'Marseille, France',
+    'exp3-role':  'Data Analyst Intern',
+    'exp3-badge': 'Trade & Quality Analytics',
+    'exp3-li1':   'Mined multi-source commercial and operational data for LATAM & Oceania trade performance; delivered daily KPI reports and ad-hoc analyses to Business Development Managers',
+    'exp3-li2':   'Handled trade compliance - classification and quality review of restricted commodities via HS codes; flagged and resolved exceptions cross-functionally',
+    'exp3-li3':   'Built automated dashboards in Power BI, Qlik Sense, and Excel VBA, reducing manual effort and improving governance-ready stakeholder access',
+    'exp3-li4':   'Supported post-signature data governance: validation checks, compliance reporting, process documentation, and mandate reporting accuracy',
+
+    'exp4-loc':   'Indore, India',
+    'exp4-role':  'Data Scientist Intern',
+    'exp4-li1':   'Built ETL pipelines and ML models (Random Forest, 79% accuracy) using Python & SQL on 50K+ records',
+    'exp4-li2':   'Developed a Flask API prototype for AI-driven automation - early experience with agentic data workflows',
+
+    'proj1-cat':       'Data Engineering · BI',
+    'proj1-desc':      'Real-time stateful engine for container repositioning in maritime logistics. Medallion Architecture pipeline integrating AIS vessel ETAs, Freightos market indices, and ECB financial indicators with predictive ETA deviation alerts and per-diem cost impact analysis.',
+    'proj1-highlight': 'Human-in-the-Loop AI workflow · Multi-sheet BI decision reports',
+
+    'proj2-cat':       'AI Automation · Compliance',
+    'proj2-desc':      'Agentic Python workflow for automated ledger validation and audit quality checks - bridging accounting and data analytics. Rule-based governance supporting EMIR & MiFID II compliance frameworks with full audit traceability.',
+    'proj2-highlight': 'Mandate termination validation · Audit traceability',
+
+    'proj3-cat':       'Machine Learning · Finance',
+    'proj3-desc':      'LSTM and Prophet models predicting EUR/JPY exchange rates on 20 years of Yahoo Finance data. Evaluated with RMSE - LSTM led on short-term, Prophet on long-term forecasts. Demonstrated AI synergy for reliable forex prediction.',
+    'proj3-highlight': 'LSTM + Prophet ensemble · 20yr historical analysis',
+
+    'proj4-cat':       'Clustering · User Analytics',
+    'proj4-desc':      'Analyzed user behavior data to segment app users by screen time and spending patterns. K-means clustering with Pandas and Plotly visualizations to reveal distinct user cohorts and behavioral drivers.',
+    'proj4-highlight': 'K-means clustering · Behavioral cohort analysis',
+
+    'proj5-cat':       'Research · Analytics',
+    'proj5-desc':      'Mixed-method research surveying 300+ gamers and interviewing industry experts to identify loyalty drivers. Statistical analysis revealed community engagement, personalized experiences, and reward systems as key retention factors.',
+    'proj5-highlight': '↑ 15–20% projected retention improvement',
+
+    'proj6-cat':       'Algorithmic Trading · Finance',
+    'proj6-desc':      'Momentum-based algorithmic trading system for EUR/JPY - buy/sell signal generation from price momentum, Yahoo Finance API data retrieval, and interactive Plotly visualizations of price and momentum trends.',
+    'proj6-highlight': 'Momentum strategy · Automated signal generation',
+
+    'free1-cat':  'Health & Wellness · Client Analytics',
+    'free1-meta': 'Anuya Zende · Certified Yoga Instructor',
+    'free1-desc': 'Analyzed student enrollment, session attendance, and engagement patterns to help a certified yoga instructor understand retention and growth trends. Delivered a clean reporting dashboard to track class performance and student progress over time.',
+
+    'free2-cat':  'Sports Performance · Data Tracking',
+    'free2-meta': 'Abhijit Purav · Licensed Air Pistol Trainer',
+    'free2-desc': 'Structured and analyzed athlete performance data for a licensed air pistol trainer. Built tracking models to identify performance trends, training consistency, and scoring patterns - enabling data-driven coaching decisions for competitive athletes.',
+
+    'free3-cat':       'Retail Expansion · Business Analytics',
+    'free3-meta':      'Imported Cycle Retail Shop · Maharashtra',
+    'free3-desc':      'Performed market and sales data analysis for an imported cycle retailer. Identified high-demand locations, customer segments, and revenue opportunities - insights that directly supported the successful launch of 2 new retail stores across Maharashtra.',
+    'free3-highlight': '↑ 2 new retail stores launched across Maharashtra',
+
+    'free4-cat':  'Fintech · Algorithmic Trading',
+    'free4-meta': 'Algorithm-based Trading Platform',
+    'free4-desc': "Gathered, cleaned, and structured financial market data to support an algorithm-based trading platform's automation pipeline. Improved data quality and coverage for better signal generation and reduced manual data handling in live trading workflows.",
+
+    'skill1-head': 'AI Tools & LLMs',
+    'skill2-head': 'Machine Learning & Data Science',
+    'skill3-head': 'Business Intelligence & Excel',
+    'skill4-head': 'Data Analysis',
+    'skill5-head': 'Data Management',
+    'skill6-head': 'Data Engineering',
+    'skill7-head': 'Automation & Collaboration',
+    'skill8-head': 'Ways of Working',
+
+    'edu1-degree': 'MSc - Data & Business Analytics (Finance)',
+    'edu2-degree': 'Post Graduate Program in Data Science',
+    'edu3-degree': 'Bachelor of Engineering - Electrical Engineering',
+
+    'modal-sub':             "Choose how you'd like to reach out",
+    'modal-email-label':     'Email',
+    'modal-email-alt-label': 'Email (alternate)',
+    'modal-phone-fr-label':  'Phone · France',
+    'modal-phone-in-label':  'Phone · India',
+
     'contact-sup':    'Available now',
-    'contact-head':   "Let's build something with data.",
-    'contact-note':   'Open to full-time and contract roles in data analytics, analytics engineering, and BI. Based in Rennes, France - available to relocate across Europe and Asia.',
+    'contact-head':   "Let's build something<br><em>with data.</em>",
+    'contact-note':   'Open to full-time and contract roles in data analytics, analytics engineering, and BI.<br>Based in Rennes, France - available to relocate across Europe and Asia.',
+
+    'footer-deploy':  'Deployed on GitHub Pages',
   },
   fr: {
     'nav-exp':    'Expérience',
@@ -1141,13 +1245,117 @@ const translations = {
     'nav-cta':    'Me contacter',
     'status':     'Ouvert aux opportunités · Europe & Asie',
     'role':       'Analyste de données · Data Scientist · Ingénieur analytique',
-    'bio':        'Je couvre l\'ensemble du spectre des données - des pipelines et tableaux de bord aux modèles prédictifs et à l\'automatisation NLP. Du gaming à la finance en passant par le transport maritime et la santé, j\'applique l\'analytique classique et le ML moderne pour transformer les données en décisions.',
-    'email-btn':  'M\'écrire',
+    'bio':        "Je transforme des données complexes et multi-sources en tableaux de bord, pipelines et modèles qui aident les équipes à décider avec clarté. Des routes commerciales maritimes mondiales chez CMA CGM à l'analytique des flux hospitaliers, je fais le lien entre l'ingénierie des données et les résultats business dans plusieurs secteurs.",
+    'email-btn':  "M'écrire",
     'proj-btn':   'Voir les projets ↓',
     'lang-label': 'Langues',
+
+    'loc-label':      'Localisation',
+    'loc-sub':        'Disponible pour relocation · Europe & Asie',
+    'citizen-label':  'Citoyenneté & Autorisation',
+    'citizen-val':    'Citoyen indien',
+    'citizen-sub':    "Autorisation de travail française valide · Ouvert à l'Europe & l'Asie",
+    'stack-label':    'Outils principaux',
+    'ai-label':       'Outils & Modèles IA',
+
+    'sec-exp':    'Expérience',
+    'sec-proj':   'Projets',
+    'sec-free':   'Freelance & Conseil',
+    'sec-skills': 'Compétences',
+    'sec-edu':    'Formation',
+
+    'exp1-loc':   'Freelance · À distance',
+    'exp1-role':  'Analyste de données freelance',
+    'exp1-badge': 'Conseil & Analytique',
+    'exp1-li1':   'Réalisation d\'analyses de données et de rapports de bout en bout pour 4 clients indépendants dans les domaines du fitness, du sport, du commerce de détail et de la fintech',
+    'exp1-li2':   "Conception de tableaux de bord, de modèles de segmentation et de pipelines de données sur mesure adaptés aux besoins opérationnels de chaque entreprise",
+    'exp1-li3':   "Accompagnement de l'expansion commerciale de Summerpayami - l'analyse a directement contribué à l'ouverture de 2 nouveaux magasins dans le Maharashtra",
+    'exp1-li4':   "Collecte et structuration des données de trading pour Algobrics afin d'améliorer l'automatisation algorithmique et la précision des signaux",
+
+    'exp2-loc':   'Mumbai, Inde',
+    'exp2-role':  'Analyste de données santé',
+    'exp2-li1':   "Analyse des données opérationnelles hospitalières - flux de patients, utilisation, personnel - afin d'améliorer l'efficacité des coûts et la performance des processus",
+    'exp2-li2':   'Conception de tableaux de bord de suivi des indicateurs clés pour les jalons de projet, l\'utilisation des ressources et le respect du budget',
+    'exp2-li3':   'Collaboration avec les architectes, ingénieurs et équipes hospitalières pour transformer les données opérationnelles en informations exploitables',
+
+    'exp3-loc':   'Marseille, France',
+    'exp3-role':  'Stagiaire analyste de données',
+    'exp3-badge': 'Analytique commerciale & qualité',
+    'exp3-li1':   "Exploration de données commerciales et opérationnelles multi-sources pour la performance commerciale LATAM & Océanie ; remise de rapports d'indicateurs quotidiens et d'analyses ponctuelles aux responsables du développement commercial",
+    'exp3-li2':   'Gestion de la conformité commerciale - classification et contrôle qualité des marchandises réglementées via les codes SH ; identification et résolution des exceptions en transverse',
+    'exp3-li3':   "Conception de tableaux de bord automatisés sous Power BI, Qlik Sense et Excel VBA, réduisant l'effort manuel et améliorant l'accès des parties prenantes dans un cadre de gouvernance",
+    'exp3-li4':   "Support de la gouvernance des données post-signature : contrôles de validation, reporting de conformité, documentation des processus et exactitude du reporting des mandats",
+
+    'exp4-loc':   'Indore, Inde',
+    'exp4-role':  'Stagiaire data scientist',
+    'exp4-li1':   'Conception de pipelines ETL et de modèles de machine learning (Random Forest, 79 % de précision) avec Python & SQL sur plus de 50 000 enregistrements',
+    'exp4-li2':   "Développement d'un prototype d'API Flask pour l'automatisation pilotée par l'IA - première expérience des workflows de données agentiques",
+
+    'proj1-cat':       'Ingénierie des données · BI',
+    'proj1-desc':      "Moteur avec état en temps réel pour le repositionnement de conteneurs dans la logistique maritime. Pipeline en architecture médaillon intégrant les ETA des navires AIS, les indices de marché Freightos et les indicateurs financiers de la BCE, avec alertes prédictives d'écart d'ETA et analyse d'impact des coûts de surestaries.",
+    'proj1-highlight': 'Workflow IA avec supervision humaine · Rapports décisionnels BI multi-feuilles',
+
+    'proj2-cat':       'Automatisation IA · Conformité',
+    'proj2-desc':      "Workflow Python agentique pour la validation automatisée des écritures comptables et les contrôles qualité d'audit - à la croisée de la comptabilité et de l'analytique de données. Gouvernance à base de règles conforme aux cadres EMIR & MiFID II, avec traçabilité d'audit complète.",
+    'proj2-highlight': "Validation de résiliation de mandat · Traçabilité d'audit",
+
+    'proj3-cat':       'Machine Learning · Finance',
+    'proj3-desc':      'Modèles LSTM et Prophet prédisant les taux de change EUR/JPY sur 20 ans de données Yahoo Finance. Évalués par RMSE - LSTM en tête à court terme, Prophet à long terme. Démonstration d\'une synergie IA pour une prévision forex fiable.',
+    'proj3-highlight': 'Ensemble LSTM + Prophet · Analyse historique sur 20 ans',
+
+    'proj4-cat':       'Clustering · Analytique utilisateur',
+    'proj4-desc':      "Analyse des données comportementales pour segmenter les utilisateurs d'application selon le temps d'écran et les habitudes de dépense. Clustering K-means avec Pandas et visualisations Plotly pour révéler des cohortes d'utilisateurs distinctes et leurs facteurs comportementaux.",
+    'proj4-highlight': 'Clustering K-means · Analyse de cohortes comportementales',
+
+    'proj5-cat':       'Recherche · Analytique',
+    'proj5-desc':      "Recherche à méthodes mixtes auprès de plus de 300 joueurs et d'experts du secteur pour identifier les facteurs de fidélité. L'analyse statistique a révélé l'engagement communautaire, la personnalisation de l'expérience et les systèmes de récompense comme facteurs clés de rétention.",
+    'proj5-highlight': '↑ Amélioration projetée de la rétention de 15 à 20 %',
+
+    'proj6-cat':       'Trading algorithmique · Finance',
+    'proj6-desc':      "Système de trading algorithmique basé sur le momentum pour l'EUR/JPY - génération de signaux d'achat/vente à partir du momentum des prix, récupération des données via l'API Yahoo Finance et visualisations Plotly interactives des tendances de prix et de momentum.",
+    'proj6-highlight': 'Stratégie de momentum · Génération de signaux automatisée',
+
+    'free1-cat':  'Santé & bien-être · Analytique client',
+    'free1-meta': 'Anuya Zende · Instructrice de yoga certifiée',
+    'free1-desc': "Analyse des inscriptions, de la fréquentation des séances et des tendances d'engagement pour aider une instructrice de yoga certifiée à comprendre la rétention et la croissance. Livraison d'un tableau de bord clair pour suivre la performance des cours et la progression des élèves dans le temps.",
+
+    'free2-cat':  'Performance sportive · Suivi de données',
+    'free2-meta': 'Abhijit Purav · Entraîneur agréé de tir au pistolet',
+    'free2-desc': "Structuration et analyse des données de performance d'athlètes pour un entraîneur agréé de tir au pistolet. Conception de modèles de suivi pour identifier les tendances de performance, la régularité d'entraînement et les schémas de score - permettant des décisions d'entraînement fondées sur les données pour des athlètes de compétition.",
+
+    'free3-cat':       'Expansion commerciale · Analytique business',
+    'free3-meta':      'Magasin de cycles importés · Maharashtra',
+    'free3-desc':      "Analyse des données de marché et de ventes pour un revendeur de cycles importés. Identification des zones à forte demande, des segments de clientèle et des opportunités de revenu - des enseignements qui ont directement soutenu l'ouverture réussie de 2 nouveaux magasins dans le Maharashtra.",
+    'free3-highlight': '↑ 2 nouveaux magasins ouverts dans le Maharashtra',
+
+    'free4-cat':  'Fintech · Trading algorithmique',
+    'free4-meta': 'Plateforme de trading algorithmique',
+    'free4-desc': "Collecte, nettoyage et structuration de données de marché financier pour soutenir le pipeline d'automatisation d'une plateforme de trading algorithmique. Amélioration de la qualité et de la couverture des données pour une meilleure génération de signaux et une réduction du traitement manuel dans les workflows de trading en direct.",
+
+    'skill1-head': 'Outils IA & LLM',
+    'skill2-head': 'Machine Learning & Data Science',
+    'skill3-head': 'Business Intelligence & Excel',
+    'skill4-head': 'Analyse de données',
+    'skill5-head': 'Gestion des données',
+    'skill6-head': 'Ingénierie des données',
+    'skill7-head': 'Automatisation & Collaboration',
+    'skill8-head': 'Méthodes de travail',
+
+    'edu1-degree': 'Master - Data & Business Analytics (Finance)',
+    'edu2-degree': 'Programme de troisième cycle en data science',
+    'edu3-degree': "Diplôme d'ingénieur - Génie électrique",
+
+    'modal-sub':             'Choisissez comment vous souhaitez me contacter',
+    'modal-email-label':     'E-mail',
+    'modal-email-alt-label': 'E-mail (alternatif)',
+    'modal-phone-fr-label':  'Téléphone · France',
+    'modal-phone-in-label':  'Téléphone · Inde',
+
     'contact-sup':    'Disponible maintenant',
-    'contact-head':   'Construisons quelque chose avec les données.',
-    'contact-note':   'Ouvert aux postes à temps plein et aux missions en analytique de données, ingénierie analytique et BI. Basé à Rennes, France - disponible pour relocation en Europe et en Asie.',
+    'contact-head':   'Construisons quelque chose<br><em>avec les données.</em>',
+    'contact-note':   'Ouvert aux postes à temps plein et aux missions en analytique de données, ingénierie analytique et BI.<br>Basé à Rennes, France - disponible pour relocation en Europe et en Asie.',
+
+    'footer-deploy':  'Déployé sur GitHub Pages',
   },
   de: {
     'nav-exp':    'Erfahrung',
@@ -1158,13 +1366,117 @@ const translations = {
     'nav-cta':    'Kontakt aufnehmen',
     'status':     'Offen für Möglichkeiten · Europa & Asien',
     'role':       'Datenanalyst · Data Scientist · Analytics-Ingenieur',
-    'bio':        'Ich decke das gesamte Datenpektrum ab - von Pipelines und Dashboards bis hin zu prädiktiven Modellen und NLP-Automatisierung. Von Gaming über Schifffahrt und Gesundheitswesen bis hin zu Finanzen wende ich klassische Analytik und modernes ML an, um datengetriebene Entscheidungen zu ermöglichen.',
+    'bio':        'Ich verwandle unübersichtliche, mehrquellige Daten in Dashboards, Pipelines und Modelle, die Teams zu klaren Entscheidungen verhelfen. Von globalen Schifffahrtsrouten bei CMA CGM bis zur Analytik von Krankenhausabläufen verbinde ich Data Engineering mit greifbaren Geschäftsergebnissen über verschiedene Branchen hinweg.',
     'email-btn':  'E-Mail senden',
     'proj-btn':   'Projekte ansehen ↓',
     'lang-label': 'Sprachen',
+
+    'loc-label':      'Standort',
+    'loc-sub':        'Bereit zur Umsiedlung · Europa & Asien',
+    'citizen-label':  'Staatsangehörigkeit & Arbeitserlaubnis',
+    'citizen-val':    'Indischer Staatsbürger',
+    'citizen-sub':    'Gültige französische Arbeitserlaubnis · Offen für Europa & Asien',
+    'stack-label':    'Kern-Tools',
+    'ai-label':       'KI-Tools & Modelle',
+
+    'sec-exp':    'Erfahrung',
+    'sec-proj':   'Projekte',
+    'sec-free':   'Freelance & Beratung',
+    'sec-skills': 'Fähigkeiten',
+    'sec-edu':    'Ausbildung',
+
+    'exp1-loc':   'Freelance · Remote',
+    'exp1-role':  'Freelance Datenanalyst',
+    'exp1-badge': 'Beratung & Analytik',
+    'exp1-li1':   'End-to-End-Datenanalyse und Reporting für 4 unabhängige Kunden aus den Bereichen Fitness, Sport, Einzelhandel und Fintech geliefert',
+    'exp1-li2':   'Kundenspezifische Dashboards, Segmentierungsmodelle und Datenpipelines entwickelt, zugeschnitten auf die betrieblichen Anforderungen jedes Unternehmens',
+    'exp1-li3':   'Die Einzelhandelsexpansion von Summerpayami unterstützt - die Analyse trug direkt zur Eröffnung von 2 neuen Filialen in Maharashtra bei',
+    'exp1-li4':   'Handelsdaten für Algobrics gesammelt und strukturiert, um die algorithmische Automatisierung und Signalgenauigkeit zu verbessern',
+
+    'exp2-loc':   'Mumbai, Indien',
+    'exp2-role':  'Datenanalyst im Gesundheitswesen',
+    'exp2-li1':   'Betriebliche Krankenhausdaten analysiert - Patientenfluss, Auslastung, Personaleinsatz - zur Verbesserung von Kosteneffizienz und Prozessleistung',
+    'exp2-li2':   'KPI-Tracking-Dashboards für Projektmeilensteine, Ressourcennutzung und Budgeteinhaltung entwickelt',
+    'exp2-li3':   'Zusammenarbeit mit Architekten, Ingenieuren und Krankenhausteams, um Betriebsdaten in umsetzbare Erkenntnisse zu übersetzen',
+
+    'exp3-loc':   'Marseille, Frankreich',
+    'exp3-role':  'Praktikant Datenanalyse',
+    'exp3-badge': 'Handels- & Qualitätsanalytik',
+    'exp3-li1':   'Mehrquellige kommerzielle und operative Daten für die Handelsleistung in LATAM & Ozeanien ausgewertet; tägliche KPI-Berichte und Ad-hoc-Analysen an Business Development Manager geliefert',
+    'exp3-li2':   'Handelscompliance bearbeitet - Klassifizierung und Qualitätsprüfung eingeschränkter Güter über HS-Codes; Ausnahmen bereichsübergreifend erkannt und gelöst',
+    'exp3-li3':   'Automatisierte Dashboards in Power BI, Qlik Sense und Excel VBA entwickelt, wodurch manueller Aufwand reduziert und der governance-konforme Zugang für Stakeholder verbessert wurde',
+    'exp3-li4':   'Datenverwaltung nach Vertragsunterzeichnung unterstützt: Validierungsprüfungen, Compliance-Reporting, Prozessdokumentation und Genauigkeit der Mandatsberichterstattung',
+
+    'exp4-loc':   'Indore, Indien',
+    'exp4-role':  'Praktikant Data Science',
+    'exp4-li1':   'ETL-Pipelines und ML-Modelle (Random Forest, 79 % Genauigkeit) mit Python & SQL auf über 50.000 Datensätzen entwickelt',
+    'exp4-li2':   'Einen Flask-API-Prototyp für KI-gesteuerte Automatisierung entwickelt - erste Erfahrung mit agentischen Datenworkflows',
+
+    'proj1-cat':       'Data Engineering · BI',
+    'proj1-desc':      'Zustandsbehaftete Echtzeit-Engine für die Repositionierung von Containern in der Seelogistik. Medallion-Architektur-Pipeline, die AIS-Schiffs-ETAs, Freightos-Marktindizes und EZB-Finanzindikatoren integriert, mit prädiktiven ETA-Abweichungswarnungen und Analyse der Kostenauswirkungen von Standgeldern.',
+    'proj1-highlight': 'KI-Workflow mit Human-in-the-Loop · Mehrblättrige BI-Entscheidungsberichte',
+
+    'proj2-cat':       'KI-Automatisierung · Compliance',
+    'proj2-desc':      'Agentischer Python-Workflow für automatisierte Hauptbuchvalidierung und Audit-Qualitätsprüfungen - eine Brücke zwischen Buchhaltung und Datenanalytik. Regelbasierte Governance zur Unterstützung der EMIR- & MiFID-II-Compliance-Rahmenwerke mit vollständiger Audit-Nachverfolgbarkeit.',
+    'proj2-highlight': 'Validierung der Mandatsbeendigung · Audit-Nachverfolgbarkeit',
+
+    'proj3-cat':       'Machine Learning · Finanzen',
+    'proj3-desc':      'LSTM- und Prophet-Modelle zur Vorhersage von EUR/JPY-Wechselkursen auf Basis von 20 Jahren Yahoo-Finance-Daten. Bewertet mit RMSE - LSTM führend kurzfristig, Prophet langfristig. Zeigt die Synergie von KI für zuverlässige Devisenprognosen.',
+    'proj3-highlight': 'LSTM + Prophet Ensemble · 20-jährige historische Analyse',
+
+    'proj4-cat':       'Clustering · Nutzeranalytik',
+    'proj4-desc':      'Nutzerverhaltensdaten analysiert, um App-Nutzer nach Bildschirmzeit und Ausgabemustern zu segmentieren. K-Means-Clustering mit Pandas und Plotly-Visualisierungen zur Aufdeckung unterschiedlicher Nutzerkohorten und Verhaltenstreiber.',
+    'proj4-highlight': 'K-Means-Clustering · Verhaltensbezogene Kohortenanalyse',
+
+    'proj5-cat':       'Forschung · Analytik',
+    'proj5-desc':      'Forschung mit gemischten Methoden unter Befragung von über 300 Gamern und Interviews mit Branchenexperten zur Identifizierung von Loyalitätstreibern. Die statistische Analyse ergab Community-Engagement, personalisierte Erlebnisse und Belohnungssysteme als zentrale Bindungsfaktoren.',
+    'proj5-highlight': '↑ Prognostizierte Bindungsverbesserung von 15-20 %',
+
+    'proj6-cat':       'Algorithmischer Handel · Finanzen',
+    'proj6-desc':      'Momentum-basiertes algorithmisches Handelssystem für EUR/JPY - Generierung von Kauf-/Verkaufssignalen aus Preismomentum, Datenabruf über die Yahoo-Finance-API und interaktive Plotly-Visualisierungen von Preis- und Momentumtrends.',
+    'proj6-highlight': 'Momentum-Strategie · Automatisierte Signalgenerierung',
+
+    'free1-cat':  'Gesundheit & Wellness · Kundenanalytik',
+    'free1-meta': 'Anuya Zende · Zertifizierte Yogalehrerin',
+    'free1-desc': 'Analyse von Anmeldungen, Teilnahme an Sitzungen und Engagement-Mustern, um einer zertifizierten Yogalehrerin zu helfen, Bindung und Wachstumstrends zu verstehen. Bereitstellung eines übersichtlichen Reporting-Dashboards zur Verfolgung der Kursleistung und des Fortschritts der Teilnehmer über die Zeit.',
+
+    'free2-cat':  'Sportliche Leistung · Datentracking',
+    'free2-meta': 'Abhijit Purav · Lizenzierter Luftpistolentrainer',
+    'free2-desc': 'Strukturierung und Analyse von Athletenleistungsdaten für einen lizenzierten Luftpistolentrainer. Entwicklung von Tracking-Modellen zur Identifizierung von Leistungstrends, Trainingskonsistenz und Punktemustern - ermöglicht datengestützte Trainingsentscheidungen für Wettkampfathleten.',
+
+    'free3-cat':       'Einzelhandelsexpansion · Business-Analytik',
+    'free3-meta':      'Fahrradimport-Einzelhandelsgeschäft · Maharashtra',
+    'free3-desc':      'Markt- und Verkaufsdatenanalyse für einen Importeur von Fahrrädern durchgeführt. Standorte mit hoher Nachfrage, Kundensegmente und Umsatzchancen identifiziert - Erkenntnisse, die direkt zur erfolgreichen Eröffnung von 2 neuen Filialen in Maharashtra beitrugen.',
+    'free3-highlight': '↑ 2 neue Filialen in Maharashtra eröffnet',
+
+    'free4-cat':  'Fintech · Algorithmischer Handel',
+    'free4-meta': 'Algorithmusbasierte Handelsplattform',
+    'free4-desc': 'Finanzmarktdaten gesammelt, bereinigt und strukturiert, um die Automatisierungspipeline einer algorithmusbasierten Handelsplattform zu unterstützen. Datenqualität und -abdeckung für bessere Signalgenerierung verbessert und manuelle Datenverarbeitung in Live-Handelsworkflows reduziert.',
+
+    'skill1-head': 'KI-Tools & LLMs',
+    'skill2-head': 'Machine Learning & Data Science',
+    'skill3-head': 'Business Intelligence & Excel',
+    'skill4-head': 'Datenanalyse',
+    'skill5-head': 'Datenmanagement',
+    'skill6-head': 'Data Engineering',
+    'skill7-head': 'Automatisierung & Zusammenarbeit',
+    'skill8-head': 'Arbeitsweisen',
+
+    'edu1-degree': 'MSc - Data & Business Analytics (Finance)',
+    'edu2-degree': 'Postgraduiertenprogramm in Data Science',
+    'edu3-degree': 'Bachelor of Engineering - Elektrotechnik',
+
+    'modal-sub':             'Wählen Sie, wie Sie mich kontaktieren möchten',
+    'modal-email-label':     'E-Mail',
+    'modal-email-alt-label': 'E-Mail (alternativ)',
+    'modal-phone-fr-label':  'Telefon · Frankreich',
+    'modal-phone-in-label':  'Telefon · Indien',
+
     'contact-sup':    'Jetzt verfügbar',
-    'contact-head':   'Lass uns etwas mit Daten aufbauen.',
-    'contact-note':   'Offen für Vollzeit- und Vertragsstellen in Datenanalytik, Analytics Engineering und BI. Wohnhaft in Rennes, Frankreich - bereit zur Umsiedlung nach Europa und Asien.',
+    'contact-head':   'Lass uns etwas<br><em>mit Daten aufbauen.</em>',
+    'contact-note':   'Offen für Vollzeit- und Vertragsstellen in Datenanalytik, Analytics Engineering und BI.<br>Wohnhaft in Rennes, Frankreich - bereit zur Umsiedlung nach Europa und Asien.',
+
+    'footer-deploy':  'Bereitgestellt auf GitHub Pages',
   }
 };
 
