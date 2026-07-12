@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rahul Mistari - Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:           #FAFAFA;
+  --white:        #FFFFFF;
+  --ink:          #0D1117;
+  --ink2:         #3A3F4A;
+  --muted:        #7A8290;
+  --faint:        #F0F2F5;
+  --border:       #E2E6EA;
+  --teal:         #0ABFBC;
+  --teal-dark:    #0899A0;
+  --teal-deeper:  #066B70;
+  --teal-light:   #E0F8F8;
+  --teal-mid:     #B2ECEC;
+  --sans:         'Sora', sans-serif;
+  --serif:        'Playfair Display', serif;
+  --r:            8px;
+  --r-lg:         14px;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 14px; line-height: 1.65; }
+
+.lang-switcher { display:flex; gap:3px; background:var(--faint); padding:3px; border-radius:8px; border:1px solid var(--border); }
+.lang-btn {
+  font-size:11px; font-weight:600; padding:4px 10px; border-radius:5px;
+  border:none; background:transparent; color:var(--muted); cursor:pointer;
+  transition:background .15s, color .15s; font-family:var(--sans);
+}
+.lang-btn.active { background:var(--white); color:var(--teal-deeper); box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+.lang-btn:hover:not(.active) { color:var(--ink); }
+
+/* ── TOPBAR ── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 52px; background: rgba(250,250,250,0.94); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+}
+.topbar-logo {
+  font-family: var(--serif); font-size: 17px; font-weight: 600;
+  color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+}
+.topbar-logo span { color: var(--teal); }
+.topbar-nav { display: flex; gap: 0; list-style: none; }
+.topbar-nav a {
+  font-size: 12px; font-weight: 400; color: var(--muted);
+  text-decoration: none; padding: 6px 14px; border-radius: 6px;
+  transition: color .15s, background .15s;
+}
+.topbar-nav a:hover { color: var(--ink); background: var(--faint); }
+.topbar-cta {
+  font-size: 12px; font-weight: 500; color: var(--white);
+  background: var(--teal); padding: 7px 18px; border-radius: 99px;
+  text-decoration: none; transition: background .15s;
+}
+.topbar-cta:hover { background: var(--teal-dark); }
+
+/* ── LAYOUT ── */
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+
+/* ── HERO ── */
+.hero {
+  padding-top: 3.5rem; padding-bottom: 5rem;
+  display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start;
+}
+.hero-left {}
+.hero-status {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--teal-deeper); background: var(--teal-light);
+  padding: 5px 12px; border-radius: 99px; margin-bottom: 1.5rem;
+  border: 1px solid var(--teal-mid);
+}
+.hero-status-dot {
+  width: 6px; height: 6px; border-radius: 50%; background: var(--teal);
+  animation: blink 2s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+.hero-name {
+  font-family: var(--serif); font-size: 54px; line-height: 1.08;
+  font-weight: 400; color: var(--ink); margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+.hero-name-last {
+  font-style: italic; color: var(--teal-dark);
+}
+.hero-role {
+  font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 1.5rem;
+}
+.hero-bio {
+  font-size: 14.5px; color: var(--ink2); line-height: 1.8;
+  max-width: 500px; margin-bottom: 2rem;
+}
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-solid {
+  font-size: 12px; font-weight: 500; background: var(--ink); color: #fff;
+  padding: 9px 22px; border-radius: 99px; text-decoration: none; transition: opacity .15s;
+}
+.btn-solid:hover { opacity: 0.8; }
+.btn-ghost {
+  font-size: 12px; font-weight: 400; color: var(--ink2);
+  border: 1px solid var(--border); background: var(--white);
+  padding: 9px 22px; border-radius: 99px; text-decoration: none; transition: background .15s;
+}
+.btn-ghost:hover { background: var(--faint); }
+
+/* Hero right sidebar */
+.hero-sidebar { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.scard {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1rem 1.15rem;
+}
+.scard-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 6px;
+}
+.scard-val { font-size: 13px; font-weight: 500; color: var(--ink); }
+.scard-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+.chip-teal {
+  font-size: 11px; padding: 3px 9px; border-radius: 99px;
+  background: var(--teal-light); color: var(--teal-deeper); font-weight: 500;
+  border: 1px solid var(--teal-mid);
+}
+.chip-grey {
+  font-size: 11px; padding: 3px 9px; border-radius: 99px;
+  background: var(--faint); color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+/* ── DIVIDER ── */
+.section-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+/* ── SECTION ── */
+.section { padding: 4rem 0; }
+.section-head {
+  display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2.5rem;
+}
+.section-num {
+  font-family: var(--serif); font-size: 12px; font-style: italic;
+  color: var(--teal); min-width: 24px;
+}
+.section-title {
+  font-family: var(--serif); font-size: 26px; font-weight: 400;
+  color: var(--ink); letter-spacing: -0.01em;
+}
+.section-rule { flex: 1; height: 1px; background: var(--border); }
+
+/* ── TIMELINE (experience) ── */
+.timeline { position: relative; padding-left: 0; }
+.tl-item {
+  display: grid; grid-template-columns: 200px 1fr;
+  gap: 0 2.5rem; margin-bottom: 3rem; position: relative;
+}
+.tl-item:last-child { margin-bottom: 0; }
+.tl-meta { padding-top: 3px; }
+.tl-period {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 4px;
+}
+.tl-company { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.tl-location { font-size: 11px; color: var(--muted); }
+.tl-body {
+  border-left: 2px solid var(--teal-light); padding-left: 1.75rem; position: relative;
+}
+.tl-body::before {
+  content: ''; position: absolute; left: -5px; top: 7px;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--teal); border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--teal);
+}
+.tl-role { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+.tl-badge {
+  display: inline-block; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--teal-deeper); background: var(--teal-light);
+  padding: 2px 8px; border-radius: 4px; margin-bottom: 12px;
+  border: 1px solid var(--teal-mid);
+}
+.tl-list { list-style: none; margin-bottom: 12px; }
+.tl-list li {
+  font-size: 13px; color: var(--ink2); line-height: 1.7;
+  padding: 5px 0 5px 18px; position: relative;
+  border-bottom: 1px solid var(--faint);
+}
+.tl-list li:last-child { border-bottom: none; }
+.tl-list li::before {
+  content: ''; position: absolute; left: 0; top: 13px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal-mid);
+}
+.tl-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+.tl-pill {
+  font-size: 10px; padding: 2px 8px; border-radius: 4px;
+  background: var(--faint); color: var(--muted);
+  border: 1px solid var(--border); font-weight: 500;
+}
+
+/* ── PROJECTS ── */
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.proj-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.4rem;
+  display: flex; flex-direction: column;
+  transition: border-color .2s, box-shadow .2s;
+}
+.proj-card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 4px 20px rgba(10,191,188,0.1);
+}
+.proj-cat {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 8px;
+}
+.proj-title {
+  font-size: 14px; font-weight: 600; color: var(--ink);
+  margin-bottom: 3px; line-height: 1.35;
+}
+.proj-meta { font-size: 11px; color: var(--muted); margin-bottom: 10px; }
+.proj-desc { font-size: 12.5px; color: var(--ink2); line-height: 1.7; flex: 1; }
+.proj-highlight {
+  margin-top: 12px; padding: 7px 10px;
+  background: var(--teal-light); border-radius: 6px;
+  font-size: 11px; color: var(--teal-deeper); font-weight: 500;
+  border-left: 3px solid var(--teal);
+}
+.proj-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+.proj-pill {
+  font-size: 10px; padding: 2px 7px; border-radius: 4px;
+  background: var(--faint); color: var(--muted); border: 1px solid var(--border);
+}
+.proj-links { display: flex; gap: 12px; margin-top: 10px; }
+.proj-link {
+  font-size: 11px; font-weight: 600; color: var(--teal);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+}
+.proj-link:hover { text-decoration: underline; }
+
+/* ── SKILLS ── */
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.skill-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.15rem 1.25rem;
+}
+.skill-card-head {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--teal-deeper); margin-bottom: 10px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--teal-light);
+  display: flex; align-items: center; gap: 7px;
+}
+.skill-card-head::before {
+  content: ''; width: 10px; height: 2px;
+  background: var(--teal); border-radius: 1px; flex-shrink: 0;
+}
+.skill-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.skill-chip {
+  font-size: 11px; padding: 3px 9px; border-radius: 5px;
+  background: var(--faint); color: var(--ink2);
+  border: 1px solid var(--border);
+}
+
+/* ── EDUCATION ── */
+.edu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.edu-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-lg); padding: 1.25rem;
+  position: relative; overflow: hidden;
+}
+.edu-card::after {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%; background: var(--teal);
+}
+.edu-degree {
+  font-size: 13px; font-weight: 600; color: var(--ink);
+  line-height: 1.4; margin-bottom: 5px;
+}
+.edu-school { font-size: 12px; color: var(--teal-dark); font-weight: 600; margin-bottom: 4px; }
+.edu-period { font-size: 11px; color: var(--muted); }
+
+/* ── CONTACT ── */
+.contact-band {
+  background: var(--ink); border-radius: var(--r-lg);
+  padding: 3rem 3rem; display: grid;
+  grid-template-columns: 1fr auto; gap: 3rem; align-items: center;
+}
+.contact-left {}
+.contact-sup {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.75rem;
+}
+.contact-headline {
+  font-family: var(--serif); font-size: 34px; font-weight: 400;
+  color: #fff; line-height: 1.2; margin-bottom: 0.75rem;
+}
+.contact-headline em { font-style: italic; color: var(--teal); }
+.contact-note { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+.contact-links { display: flex; flex-direction: column; gap: 8px; }
+.clink {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; color: rgba(255,255,255,0.7);
+  text-decoration: none; padding: 9px 14px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: background .15s, color .15s; white-space: nowrap;
+}
+.clink:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.clink svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--teal); }
+
+/* ── FOOTER ── */
+footer {
+  text-align: center; padding: 2rem 2rem;
+  font-size: 11px; color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+footer a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── BANNER ── */
+.banner-wrap {
+  width: 100%; padding-top: 52px; /* offset for fixed nav */
+  background: var(--ink);
+  overflow: hidden; position: relative;
+}
+.banner-svg { display: block; width: 100%; height: auto; }
+
+/* ── MOBILE ── */
+@media (max-width: 740px) {
+  .topbar-nav { display: none; }
+  .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 80px; }
+  .hero-name { font-size: 40px; }
+  .tl-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .tl-body { border-left: none; padding-left: 0; }
+  .tl-body::before { display: none; }
+  .proj-grid, .skills-grid, .edu-grid { grid-template-columns: 1fr; }
+  .contact-band { grid-template-columns: 1fr; }
+  .wrap { padding: 0 1.25rem; }
+}
+/* ── CONTACT MODAL ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: rgba(13,17,23,0.55); backdrop-filter: blur(6px);
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--white); border-radius: var(--r-lg);
+  padding: 2rem 2rem 1.5rem; width: 100%; max-width: 420px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.15);
+  position: relative; animation: modalIn .2s ease;
+}
+@keyframes modalIn {
+  from { opacity:0; transform: translateY(12px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+.modal-close {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--faint); border: none; cursor: pointer;
+  font-size: 14px; color: var(--muted); display: flex;
+  align-items: center; justify-content: center;
+  transition: background .15s;
+}
+.modal-close:hover { background: var(--border); }
+.modal-title {
+  font-family: var(--serif); font-size: 22px; color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+.modal-sub {
+  font-size: 12px; color: var(--muted); margin-bottom: 1.5rem;
+}
+.modal-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; border-radius: var(--r);
+  border: 1px solid var(--border); margin-bottom: 8px;
+  text-decoration: none; color: var(--ink2);
+  font-size: 13px; transition: border-color .15s, background .15s;
+}
+.modal-item:hover { border-color: var(--teal); background: var(--teal-light); }
+.modal-item svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--teal); }
+.modal-item-label { font-size: 10px; color: var(--muted); display: block; margin-bottom: 1px; }
+.modal-item-val { font-weight: 500; color: var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">✕</button>
+    <div class="modal-title" data-i18n="nav-cta">Get in touch</div>
+    <div class="modal-sub" data-i18n="modal-sub">Choose how you'd like to reach out</div>
+
+    <a href="mailto:mistarirahul18@gmail.com" class="modal-item">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      <div>
+        <span class="modal-item-label" data-i18n="modal-email-label">Email</span>
+        <span class="modal-item-val">mistarirahul18@gmail.com</span>
+      </div>
+    </a>
+
+    <a href="mailto:rahulmistry.18@gmail.com" class="modal-item">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      <div>
+        <span class="modal-item-label" data-i18n="modal-email-alt-label">Email (alternate)</span>
+        <span class="modal-item-val">rahulmistry.18@gmail.com</span>
+      </div>
+    </a>
+
+    <a href="tel:+33745550792" class="modal-item">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <div>
+        <span class="modal-item-label" data-i18n="modal-phone-fr-label">Phone · France</span>
+        <span class="modal-item-val">+33 7 45 55 07 92</span>
+      </div>
+    </a>
+
+    <a href="tel:+919730754785" class="modal-item">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <div>
+        <span class="modal-item-label" data-i18n="modal-phone-in-label">Phone · India</span>
+        <span class="modal-item-val">+91 97307 54785</span>
+      </div>
+    </a>
+
+    <a href="https://linkedin.com/in/rahul-mistari" target="_blank" class="modal-item">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      <div>
+        <span class="modal-item-label">LinkedIn</span>
+        <span class="modal-item-val">linkedin.com/in/rahul-mistari</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/rahulmistry18" target="_blank" class="modal-item">
+      <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      <div>
+        <span class="modal-item-label">GitHub</span>
+        <span class="modal-item-val">github.com/rahulmistry18</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="topbar">
+  <a href="#" class="topbar-logo">R<span>.</span>Mistari</a>
+  <ul class="topbar-nav">
+    <li><a href="#experience" data-i18n="nav-exp">Experience</a></li>
+    <li><a href="#freelance" data-i18n="nav-free">Freelance</a></li>
+    <li><a href="#projects" data-i18n="nav-proj">Projects</a></li>
+    <li><a href="#skills" data-i18n="nav-skills">Skills</a></li>
+    <li><a href="#education" data-i18n="nav-edu">Education</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" onclick="setLang('de')">DE</button>
+    </div>
+    <a href="#" onclick="document.getElementById('contactModal').classList.add('open'); return false;" class="topbar-cta" data-i18n="nav-cta">Get in touch</a>
+  </div>
+</header>
+
+<!-- BANNER -->
+<div class="banner-wrap">
+<svg class="banner-svg" viewBox="0 0 1200 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="60%" style="stop-color:#0D1F2D"/>
+      <stop offset="100%" style="stop-color:#0D2A2A"/>
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0ABFBC;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#066B70;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ABFBC;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:#0ABFBC;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="clip"><rect width="1200" height="320"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#clip)">
+  <!-- Background -->
+  <rect width="1200" height="320" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid lines -->
+  <g stroke="#0ABFBC" stroke-opacity="0.05" stroke-width="0.5">
+    <line x1="0" y1="80" x2="1200" y2="80"/>
+    <line x1="0" y1="160" x2="1200" y2="160"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="200" y1="0" x2="200" y2="320"/>
+    <line x1="400" y1="0" x2="400" y2="320"/>
+    <line x1="600" y1="0" x2="600" y2="320"/>
+    <line x1="800" y1="0" x2="800" y2="320"/>
+    <line x1="1000" y1="0" x2="1000" y2="320"/>
+  </g>
+
+  <!-- Glow blob top-right -->
+  <ellipse cx="980" cy="60" rx="260" ry="180" fill="#0ABFBC" fill-opacity="0.07"/>
+  <ellipse cx="1050" cy="160" rx="160" ry="120" fill="#0ABFBC" fill-opacity="0.05"/>
+
+  <!-- Decorative arc right side -->
+  <circle cx="1120" cy="160" r="200" fill="none" stroke="#0ABFBC" stroke-opacity="0.1" stroke-width="1"/>
+  <circle cx="1120" cy="160" r="150" fill="none" stroke="#0ABFBC" stroke-opacity="0.07" stroke-width="0.5"/>
+  <circle cx="1120" cy="160" r="100" fill="none" stroke="#0ABFBC" stroke-opacity="0.12" stroke-width="0.5"/>
+
+  <!-- Teal accent bar top -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#tealGrad)"/>
+
+  <!-- Left vertical accent line -->
+  <rect x="72" y="50" width="2" height="220" fill="#0ABFBC" fill-opacity="0.4"/>
+  <circle cx="73" cy="50" r="3" fill="#0ABFBC"/>
+  <circle cx="73" cy="270" r="3" fill="#0ABFBC"/>
+
+  <!-- Section number -->
+  <text x="88" y="55" font-family="Georgia, serif" font-size="11" font-style="italic" fill="#0ABFBC" fill-opacity="0.7" letter-spacing="1">DATA ANALYST  ·  DATA SCIENTIST  ·  ANALYTICS ENGINEER</text>
+
+  <!-- Role line -->
+  <rect x="88" y="68" width="340" height="1" fill="#0ABFBC" fill-opacity="0.3"/>
+  <text x="88" y="88" font-family="'Arial', sans-serif" font-size="12" font-weight="600" fill="#FFFFFF" fill-opacity="0.55" letter-spacing="3">DATA ANALYST  ·  ANALYTICS ENGINEER</text>
+
+  <!-- Location chip -->
+  <rect x="88" y="106" width="148" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.12" stroke="#0ABFBC" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="104" cy="117" r="4" fill="#0ABFBC"/>
+  <text x="114" y="121" font-family="Arial, sans-serif" font-size="11" fill="#0ABFBC" letter-spacing="0.5">Rennes, France</text>
+
+  <!-- Availability chip -->
+  <rect x="248" y="106" width="158" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.12" stroke="#0ABFBC" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="262" cy="117" r="3" fill="#4AE8A0"/>
+  <text x="272" y="121" font-family="Arial, sans-serif" font-size="11" fill="#0ABFBC" letter-spacing="0.5">Open to Opportunities</text>
+
+  <!-- Right side: skill pills column -->
+  <text x="750" y="85" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#0ABFBC" fill-opacity="0.6" letter-spacing="2">CORE STACK</text>
+
+  <!-- Pill row 1 -->
+  <rect x="750" y="96" width="78" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="789" y="111" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">Power BI</text>
+  <rect x="840" y="96" width="58" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="869" y="111" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">Python</text>
+  <rect x="910" y="96" width="44" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="932" y="111" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">SQL</text>
+  <rect x="966" y="96" width="44" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="988" y="111" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">ETL</text>
+
+  <!-- Pill row 2 -->
+  <rect x="750" y="128" width="80" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="790" y="143" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">Qlik Sense</text>
+  <rect x="842" y="128" width="104" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="894" y="143" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">Power Automate</text>
+  <rect x="958" y="128" width="52" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="984" y="143" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">dbt</text>
+
+  <!-- Pill row 3 -->
+  <rect x="750" y="160" width="70" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="785" y="175" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">Tableau</text>
+  <rect x="832" y="160" width="80" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="872" y="175" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">BigQuery</text>
+  <rect x="924" y="160" width="52" height="22" rx="11" fill="#0ABFBC" fill-opacity="0.1" stroke="#0ABFBC" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="950" y="175" font-family="Arial, sans-serif" font-size="11" fill="#FFFFFF" fill-opacity="0.8" text-anchor="middle">Airflow</text>
+
+  <!-- Stats row -->
+  <rect x="750" y="210" width="300" height="1" fill="#0ABFBC" fill-opacity="0.15"/>
+
+  <text x="760" y="240" font-family="Georgia, serif" font-size="30" font-weight="400" fill="#0ABFBC">3+</text>
+  <text x="760" y="258" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF" fill-opacity="0.4" letter-spacing="1">YEARS EXP</text>
+
+  <text x="860" y="240" font-family="Georgia, serif" font-size="30" font-weight="400" fill="#0ABFBC">6</text>
+  <text x="860" y="258" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF" fill-opacity="0.4" letter-spacing="1">PROJECTS</text>
+
+  <text x="940" y="240" font-family="Georgia, serif" font-size="30" font-weight="400" fill="#0ABFBC">4</text>
+  <text x="940" y="258" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF" fill-opacity="0.4" letter-spacing="1">DOMAINS</text>
+
+  <text x="1010" y="240" font-family="Georgia, serif" font-size="30" font-weight="400" fill="#0ABFBC">4</text>
+  <text x="1010" y="258" font-family="Arial, sans-serif" font-size="10" fill="#FFFFFF" fill-opacity="0.4" letter-spacing="1">LANGUAGES</text>
+
+  <!-- Bottom teal fade -->
+  <rect x="0" y="280" width="1200" height="40" fill="url(#glowGrad)" fill-opacity="0.4"/>
+  </g>
+</svg>
+</div>
+
+<!-- HERO -->
+<div class="wrap">
+  <div class="hero" style="padding-top:3.5rem;">
+    <div class="hero-left">
+      <div class="hero-status">
+        <span class="hero-status-dot"></span>
+        <span data-i18n="status">Open to opportunities · Europe &amp; Asia</span>
+      </div>
+      <h1 class="hero-name">Rahul<br><span class="hero-name-last">Mistari</span></h1>
+      <p class="hero-role" data-i18n="role">Data Analyst · Data Scientist · Analytics Engineer</p>
+      <p class="hero-bio" data-i18n="bio">
+        I transform messy, multi-source data into dashboards, pipelines, and models that help teams decide with clarity. From global shipping trade lanes at CMA CGM to hospital workflow analytics, I bridge data engineering and business outcomes across domains.
+      </p>
+      <div class="hero-actions">
+        <a href="mailto:mistarirahul18@gmail.com" class="btn-solid" data-i18n="email-btn">Email me</a>
+        <a href="https://linkedin.com/in/rahul-mistari" target="_blank" class="btn-ghost">LinkedIn</a>
+        <a href="https://github.com/rahulmistry18" target="_blank" class="btn-ghost">GitHub</a>
+        <a href="#projects" class="btn-ghost" data-i18n="proj-btn">View projects ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-sidebar">
+      <div class="scard">
+        <div class="scard-label" data-i18n="loc-label">Location</div>
+        <div class="scard-val">Rennes, France</div>
+        <div class="scard-sub" data-i18n="loc-sub">Available to relocate · Europe &amp; Asia</div>
+      </div>
+      <div class="scard">
+        <div class="scard-label" data-i18n="citizen-label">Citizenship & Authorization</div>
+        <div class="scard-val" data-i18n="citizen-val">Indian Citizen</div>
+        <div class="scard-sub" data-i18n="citizen-sub">Valid French work authorization · Open to Europe &amp; Asia</div>
+      </div>
+      <div class="scard">
+        <div class="scard-label" data-i18n="lang-label">Languages</div>
+        <div class="chip-row">
+          <span class="chip-teal">English · Fluent</span>
+          <span class="chip-grey">Hindi · Native</span>
+          <span class="chip-grey">French · B1</span>
+          <span class="chip-grey">German · A2</span>
+        </div>
+      </div>
+      <div class="scard">
+        <div class="scard-label" data-i18n="stack-label">Core stack</div>
+        <div class="chip-row">
+          <span class="chip-teal">Power BI</span>
+          <span class="chip-teal">Python</span>
+          <span class="chip-teal">SQL</span>
+          <span class="chip-teal">Qlik Sense</span>
+          <span class="chip-teal">Tableau</span>
+          <span class="chip-teal">ETL</span>
+          <span class="chip-teal">Pandas</span>
+          <span class="chip-teal">Scikit-learn</span>
+          <span class="chip-teal">XGBoost</span>
+          <span class="chip-teal">LSTM</span>
+          <span class="chip-teal">Prophet</span>
+          <span class="chip-teal">Power Automate</span>
+        </div>
+      </div>
+      <div class="scard">
+        <div class="scard-label" data-i18n="ai-label">AI Tools &amp; Models</div>
+        <div class="chip-row">
+          <span class="chip-grey">Claude Sonnet 4.5</span>
+          <span class="chip-grey">Claude Haiku 4.5</span>
+          <span class="chip-grey">Gemini 2.0 Flash</span>
+          <span class="chip-grey">Google AI Studio</span>
+          <span class="chip-grey">Emergent AI</span>
+          <span class="chip-grey">Prompt Engineering</span>
+          <span class="chip-grey">Agentic Workflows</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider"/>
+
+<!-- EXPERIENCE -->
+<div class="wrap">
+  <div class="section" id="experience">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title" data-i18n="sec-exp">Experience</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-period">Dec 2025 – Present</div>
+          <div class="tl-company">Vearro Co.</div>
+          <div class="tl-location" data-i18n="exp1-loc">Freelance · Remote</div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-role" data-i18n="exp1-role">Freelance Data Analyst</div>
+          <span class="tl-badge" data-i18n="exp1-badge">Consulting &amp; Analytics</span>
+          <ul class="tl-list">
+            <li data-i18n="exp1-li1">Delivered end-to-end data analysis and reporting for 4 independent clients across fitness, sports, retail, and fintech domains</li>
+            <li data-i18n="exp1-li2">Built client-specific dashboards, segmentation models, and data pipelines tailored to each business's operational needs</li>
+            <li data-i18n="exp1-li3">Supported Summerpayami's retail expansion - analysis directly contributed to the launch of 2 new retail stores across Maharashtra</li>
+            <li data-i18n="exp1-li4">Gathered and structured trading data for Algobrics to improve algorithmic automation and signal accuracy</li>
+          </ul>
+          <div class="tl-pills">
+            <span class="tl-pill">Python</span><span class="tl-pill">SQL</span><span class="tl-pill">Excel</span><span class="tl-pill">Data Analysis</span><span class="tl-pill">Dashboard Design</span><span class="tl-pill">Client Consulting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-period">Apr 2025 – Oct 2025</div>
+          <div class="tl-company">Archora</div>
+          <div class="tl-location" data-i18n="exp2-loc">Mumbai, India</div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-role" data-i18n="exp2-role">Healthcare Data Analyst</div>
+          <ul class="tl-list">
+            <li data-i18n="exp2-li1">Analyzed hospital operational data - patient flow, utilization, staffing - to improve cost efficiency and workflow performance</li>
+            <li data-i18n="exp2-li2">Built KPI tracking dashboards for project milestones, resource usage, and budget adherence</li>
+            <li data-i18n="exp2-li3">Partnered with architects, engineers, and hospital teams to translate operational data into actionable insights</li>
+          </ul>
+          <div class="tl-pills">
+            <span class="tl-pill">Power BI</span><span class="tl-pill">KPI Tracking</span><span class="tl-pill">Healthcare Analytics</span><span class="tl-pill">Excel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-period">Feb 2024 – Aug 2024</div>
+          <div class="tl-company">CMA CGM</div>
+          <div class="tl-location" data-i18n="exp3-loc">Marseille, France</div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-role" data-i18n="exp3-role">Data Analyst Intern</div>
+          <span class="tl-badge" data-i18n="exp3-badge">Trade &amp; Quality Analytics</span>
+          <ul class="tl-list">
+            <li data-i18n="exp3-li1">Mined multi-source commercial and operational data for LATAM &amp; Oceania trade performance; delivered daily KPI reports and ad-hoc analyses to Business Development Managers</li>
+            <li data-i18n="exp3-li2">Handled trade compliance - classification and quality review of restricted commodities via HS codes; flagged and resolved exceptions cross-functionally</li>
+            <li data-i18n="exp3-li3">Built automated dashboards in Power BI, Qlik Sense, and Excel VBA, reducing manual effort and improving governance-ready stakeholder access</li>
+            <li data-i18n="exp3-li4">Supported post-signature data governance: validation checks, compliance reporting, process documentation, and mandate reporting accuracy</li>
+          </ul>
+          <div class="tl-pills">
+            <span class="tl-pill">Power BI</span><span class="tl-pill">Qlik Sense</span><span class="tl-pill">Excel VBA</span><span class="tl-pill">SQL</span><span class="tl-pill">Trade Compliance</span><span class="tl-pill">Data Governance</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-meta">
+          <div class="tl-period">Jan 2022 – Jun 2022</div>
+          <div class="tl-company">Technocolabs Softwares</div>
+          <div class="tl-location" data-i18n="exp4-loc">Indore, India</div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-role" data-i18n="exp4-role">Data Scientist Intern</div>
+          <ul class="tl-list">
+            <li data-i18n="exp4-li1">Built ETL pipelines and ML models (Random Forest, 79% accuracy) using Python &amp; SQL on 50K+ records</li>
+            <li data-i18n="exp4-li2">Developed a Flask API prototype for AI-driven automation - early experience with agentic data workflows</li>
+          </ul>
+          <div class="tl-pills">
+            <span class="tl-pill">Python</span><span class="tl-pill">SQL</span><span class="tl-pill">Random Forest</span><span class="tl-pill">Flask</span><span class="tl-pill">ETL</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider"/>
+
+<!-- PROJECTS -->
+<div class="wrap">
+  <div class="section" id="projects">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title" data-i18n="sec-proj">Projects</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="proj1-cat">Data Engineering · BI</div>
+        <div class="proj-title">RepoSea</div>
+        <div class="proj-meta">Oct 2025 – Present · Personal</div>
+        <p class="proj-desc" data-i18n="proj1-desc">Real-time stateful engine for container repositioning in maritime logistics. Medallion Architecture pipeline integrating AIS vessel ETAs, Freightos market indices, and ECB financial indicators with predictive ETA deviation alerts and per-diem cost impact analysis.</p>
+        <div class="proj-highlight" data-i18n="proj1-highlight">Human-in-the-Loop AI workflow · Multi-sheet BI decision reports</div>
+        <div class="proj-pills">
+          <span class="proj-pill">Python</span><span class="proj-pill">APIs</span><span class="proj-pill">Medallion Architecture</span><span class="proj-pill">Predictive Analytics</span><span class="proj-pill">BI Reporting</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/rahulmistry18/Reposea_container_optimizer" target="_blank" class="proj-link">GitHub ↗</a>
+          <a href="https://rahulmistry18.github.io/Reposea_container_optimizer/" target="_blank" class="proj-link">Live Dashboard ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="proj2-cat">AI Automation · Compliance</div>
+        <div class="proj-title">Audit Data Automation PoC</div>
+        <div class="proj-meta">Jun 2023 · Rennes School of Business</div>
+        <p class="proj-desc" data-i18n="proj2-desc">Agentic Python workflow for automated ledger validation and audit quality checks - bridging accounting and data analytics. Rule-based governance supporting EMIR &amp; MiFID II compliance frameworks with full audit traceability.</p>
+        <div class="proj-highlight" data-i18n="proj2-highlight">Mandate termination validation · Audit traceability</div>
+        <div class="proj-pills">
+          <span class="proj-pill">Python</span><span class="proj-pill">Pandas</span><span class="proj-pill">NumPy</span><span class="proj-pill">Alteryx</span><span class="proj-pill">EMIR</span><span class="proj-pill">MiFID II</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/rahulmistry18/compliance-audit-data-automation" target="_blank" class="proj-link">GitHub ↗</a>
+          <a href="https://rahulmistry18.github.io/compliance-audit-data-automation/" target="_blank" class="proj-link">Live Demo ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="proj3-cat">Machine Learning · Finance</div>
+        <div class="proj-title">Forex Rate Prediction with AI</div>
+        <div class="proj-meta">Jan – Oct 2023 · Rennes School of Business</div>
+        <p class="proj-desc" data-i18n="proj3-desc">LSTM and Prophet models predicting EUR/JPY exchange rates on 20 years of Yahoo Finance data. Evaluated with RMSE - LSTM led on short-term, Prophet on long-term forecasts. Demonstrated AI synergy for reliable forex prediction.</p>
+        <div class="proj-highlight" data-i18n="proj3-highlight">LSTM + Prophet ensemble · 20yr historical analysis</div>
+        <div class="proj-pills">
+          <span class="proj-pill">Python</span><span class="proj-pill">LSTM</span><span class="proj-pill">Prophet</span><span class="proj-pill">Yahoo Finance API</span><span class="proj-pill">RMSE</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="proj4-cat">Clustering · User Analytics</div>
+        <div class="proj-title">App User Segmentation</div>
+        <div class="proj-meta">Oct 2023 · Rennes School of Business</div>
+        <p class="proj-desc" data-i18n="proj4-desc">Analyzed user behavior data to segment app users by screen time and spending patterns. K-means clustering with Pandas and Plotly visualizations to reveal distinct user cohorts and behavioral drivers.</p>
+        <div class="proj-highlight" data-i18n="proj4-highlight">K-means clustering · Behavioral cohort analysis</div>
+        <div class="proj-pills">
+          <span class="proj-pill">Python</span><span class="proj-pill">Pandas</span><span class="proj-pill">Plotly</span><span class="proj-pill">K-means</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="proj5-cat">Research · Analytics</div>
+        <div class="proj-title">Gamer Loyalty &amp; Engagement Analytics</div>
+        <div class="proj-meta">Mar – Oct 2023 · Rennes School of Business</div>
+        <p class="proj-desc" data-i18n="proj5-desc">Mixed-method research surveying 300+ gamers and interviewing industry experts to identify loyalty drivers. Statistical analysis revealed community engagement, personalized experiences, and reward systems as key retention factors.</p>
+        <div class="proj-highlight" data-i18n="proj5-highlight">↑ 15–20% projected retention improvement</div>
+        <div class="proj-pills">
+          <span class="proj-pill">Statistical Analysis</span><span class="proj-pill">Survey Design</span><span class="proj-pill">Game Theory</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="proj6-cat">Algorithmic Trading · Finance</div>
+        <div class="proj-title">Algorithmic Forex Trading</div>
+        <div class="proj-meta">Jun 2023 · Rennes School of Business</div>
+        <p class="proj-desc" data-i18n="proj6-desc">Momentum-based algorithmic trading system for EUR/JPY - buy/sell signal generation from price momentum, Yahoo Finance API data retrieval, and interactive Plotly visualizations of price and momentum trends.</p>
+        <div class="proj-highlight" data-i18n="proj6-highlight">Momentum strategy · Automated signal generation</div>
+        <div class="proj-pills">
+          <span class="proj-pill">Python</span><span class="proj-pill">Yahoo Finance API</span><span class="proj-pill">Plotly</span><span class="proj-pill">Algo Trading</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider"/>
+
+<!-- FREELANCE -->
+<div class="wrap">
+  <div class="section" id="freelance">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title" data-i18n="sec-free">Freelance &amp; Consulting</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="free1-cat">Health &amp; Wellness · Client Analytics</div>
+        <div class="proj-title">Yoganubhav</div>
+        <div class="proj-meta" data-i18n="free1-meta">Anuya Zende · Certified Yoga Instructor</div>
+        <p class="proj-desc" data-i18n="free1-desc">Analyzed student enrollment, session attendance, and engagement patterns to help a certified yoga instructor understand retention and growth trends. Delivered a clean reporting dashboard to track class performance and student progress over time.</p>
+        <div class="proj-pills">
+          <span class="proj-pill">Excel</span><span class="proj-pill">Data Analysis</span><span class="proj-pill">Dashboard</span><span class="proj-pill">Retention Analytics</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="free2-cat">Sports Performance · Data Tracking</div>
+        <div class="proj-title">10x Shooting</div>
+        <div class="proj-meta" data-i18n="free2-meta">Abhijit Purav · Licensed Air Pistol Trainer</div>
+        <p class="proj-desc" data-i18n="free2-desc">Structured and analyzed athlete performance data for a licensed air pistol trainer. Built tracking models to identify performance trends, training consistency, and scoring patterns - enabling data-driven coaching decisions for competitive athletes.</p>
+        <div class="proj-pills">
+          <span class="proj-pill">Python</span><span class="proj-pill">Performance Analytics</span><span class="proj-pill">Data Tracking</span><span class="proj-pill">Excel</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="free3-cat">Retail Expansion · Business Analytics</div>
+        <div class="proj-title">Summerpayami</div>
+        <div class="proj-meta" data-i18n="free3-meta">Imported Cycle Retail Shop · Maharashtra</div>
+        <p class="proj-desc" data-i18n="free3-desc">Performed market and sales data analysis for an imported cycle retailer. Identified high-demand locations, customer segments, and revenue opportunities - insights that directly supported the successful launch of 2 new retail stores across Maharashtra.</p>
+        <div class="proj-highlight" data-i18n="free3-highlight">↑ 2 new retail stores launched across Maharashtra</div>
+        <div class="proj-pills">
+          <span class="proj-pill">SQL</span><span class="proj-pill">Market Analysis</span><span class="proj-pill">Retail Analytics</span><span class="proj-pill">Expansion Strategy</span>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-cat" data-i18n="free4-cat">Fintech · Algorithmic Trading</div>
+        <div class="proj-title">Algobrics</div>
+        <div class="proj-meta" data-i18n="free4-meta">Algorithm-based Trading Platform</div>
+        <p class="proj-desc" data-i18n="free4-desc">Gathered, cleaned, and structured financial market data to support an algorithm-based trading platform's automation pipeline. Improved data quality and coverage for better signal generation and reduced manual data handling in live trading workflows.</p>
+        <div class="proj-pills">
+          <span class="proj-pill">Python</span><span class="proj-pill">Data Collection</span><span class="proj-pill">Financial Data</span><span class="proj-pill">Automation</span><span class="proj-pill">ETL</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider"/>
+
+<!-- SKILLS -->
+<div class="wrap">
+  <div class="section" id="skills">
+    <div class="section-head">
+      <span class="section-num">04</span>
+      <h2 class="section-title" data-i18n="sec-skills">Skills</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-head" data-i18n="skill1-head">AI Tools &amp; LLMs</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Claude (Sonnet 4.5, Haiku 4.5)</span>
+          <span class="skill-chip">Gemini 2.0 Flash</span>
+          <span class="skill-chip">Google AI Studio</span>
+          <span class="skill-chip">Emergent AI</span>
+          <span class="skill-chip">Prompt Engineering</span>
+          <span class="skill-chip">Agentic Workflows</span>
+          <span class="skill-chip">AI-assisted Automation</span>
+          <span class="skill-chip">LLM Integration</span>
+          <span class="skill-chip">Human-in-the-Loop</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-head" data-i18n="skill2-head">Machine Learning &amp; Data Science</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Scikit-learn</span>
+          <span class="skill-chip">XGBoost</span>
+          <span class="skill-chip">Random Forest</span>
+          <span class="skill-chip">LSTM</span>
+          <span class="skill-chip">Prophet</span>
+          <span class="skill-chip">K-means Clustering</span>
+          <span class="skill-chip">NLP</span>
+          <span class="skill-chip">RMSE / Model Evaluation</span>
+          <span class="skill-chip">Feature Engineering</span>
+          <span class="skill-chip">Flask API</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-head" data-i18n="skill3-head">Business Intelligence &amp; Excel</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Power BI</span>
+          <span class="skill-chip">Tableau</span>
+          <span class="skill-chip">Qlik Sense</span>
+          <span class="skill-chip">Excel</span>
+          <span class="skill-chip">Power Query</span>
+          <span class="skill-chip">VBA</span>
+          <span class="skill-chip">Advanced Formulas</span>
+          <span class="skill-chip">Pivot Tables</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-head" data-i18n="skill4-head">Data Analysis</div>
+        <div class="skill-chips">
+          <span class="skill-chip">SQL</span>
+          <span class="skill-chip">Python</span>
+          <span class="skill-chip">Pandas</span>
+          <span class="skill-chip">NumPy</span>
+          <span class="skill-chip">KPI Tracking</span>
+          <span class="skill-chip">Trend Analysis</span>
+          <span class="skill-chip">Data Mining</span>
+          <span class="skill-chip">Forecasting</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-head" data-i18n="skill5-head">Data Management</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Data Validation</span>
+          <span class="skill-chip">Data Modeling</span>
+          <span class="skill-chip">Data Integrity Checks</span>
+          <span class="skill-chip">Quality Analytics</span>
+          <span class="skill-chip">Compliance Reporting</span>
+          <span class="skill-chip">Process Optimization</span>
+          <span class="skill-chip">Continuous Improvement</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-head" data-i18n="skill6-head">Data Engineering</div>
+        <div class="skill-chips">
+          <span class="skill-chip">ETL Pipelines</span>
+          <span class="skill-chip">PySpark</span>
+          <span class="skill-chip">Airflow</span>
+          <span class="skill-chip">Docker</span>
+          <span class="skill-chip">dbt</span>
+          <span class="skill-chip">BigQuery</span>
+          <span class="skill-chip">Medallion Architecture</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-head" data-i18n="skill7-head">Automation &amp; Collaboration</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Power Automate</span>
+          <span class="skill-chip">SharePoint</span>
+          <span class="skill-chip">Microsoft 365</span>
+          <span class="skill-chip">Teams</span>
+          <span class="skill-chip">Alteryx</span>
+          <span class="skill-chip">Git / GitHub</span>
+          <span class="skill-chip">Flask API</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-head" data-i18n="skill8-head">Ways of Working</div>
+        <div class="skill-chips">
+          <span class="skill-chip">Agile</span>
+          <span class="skill-chip">Lean Process Improvement</span>
+          <span class="skill-chip">Ad-hoc Reporting</span>
+          <span class="skill-chip">Cross-functional Communication</span>
+          <span class="skill-chip">Analytics Roadmap Delivery</span>
+          <span class="skill-chip">Project Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider"/>
+
+<!-- EDUCATION -->
+<div class="wrap">
+  <div class="section" id="education">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2 class="section-title" data-i18n="sec-edu">Education</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree" data-i18n="edu1-degree">MSc - Data &amp; Business Analytics (Finance)</div>
+        <div class="edu-school">Rennes School of Business</div>
+        <div class="edu-period">Sep 2022 – Aug 2024 · France</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree" data-i18n="edu2-degree">Post Graduate Program in Data Science</div>
+        <div class="edu-school">International School of Engineering</div>
+        <div class="edu-period">Nov 2020 – Jun 2022 · India</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree" data-i18n="edu3-degree">Bachelor of Engineering - Electrical Engineering</div>
+        <div class="edu-school">University of Pune</div>
+        <div class="edu-period">Aug 2014 – Nov 2020 · India</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider"/>
+
+<!-- CONTACT -->
+<div class="wrap" style="padding-bottom: 4rem;">
+  <div class="section" id="contact" style="padding-bottom: 0;">
+    <div class="contact-band">
+      <div class="contact-left">
+        <div class="contact-sup" data-i18n="contact-sup">Available now</div>
+        <div class="contact-headline" data-i18n="contact-head">Let's build something<br><em>with data.</em></div>
+        <p class="contact-note" data-i18n="contact-note">Open to full-time and contract roles in data analytics, analytics engineering, and BI.<br>Based in Rennes, France - available to relocate across Europe and Asia.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:mistarirahul18@gmail.com" class="clink">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          mistarirahul18@gmail.com
+        </a>
+        <a href="tel:+919730754785" class="clink">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +91 97307 54785 · IN
+        </a>
+        <a href="tel:+33745550792" class="clink">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12a19.79 19.79 0 01-3.07-8.67A2 2 0 013 1.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +33 7 45 55 07 92 · FR
+        </a>
+        <a href="https://github.com/rahulmistry18" target="_blank" class="clink">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          github.com/rahulmistry18
+        </a>
+        <a href="https://linkedin.com/in/rahul-mistari" target="_blank" class="clink">
+          <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/rahul-mistari
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Rahul Mistari ·
+  <a href="https://github.com/rahulmistry18" target="_blank">github.com/rahulmistry18</a> ·
+  <span data-i18n="footer-deploy">Deployed on GitHub Pages</span>
+</footer>
+
+<script>
+function closeModal(e) {
+  if (e.target === document.getElementById('contactModal')) {
+    document.getElementById('contactModal').classList.remove('open');
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') document.getElementById('contactModal').classList.remove('open');
+});
+
+const translations = {
+  en: {
+    'nav-exp':    'Experience',
+    'nav-free':   'Freelance',
+    'nav-proj':   'Projects',
+    'nav-skills': 'Skills',
+    'nav-edu':    'Education',
+    'nav-cta':    'Get in touch',
+    'status':     'Open to opportunities · Europe & Asia',
+    'role':       'Data Analyst · Data Scientist · Analytics Engineer',
+    'bio':        'I transform messy, multi-source data into dashboards, pipelines, and models that help teams decide with clarity. From global shipping trade lanes at CMA CGM to hospital workflow analytics, I bridge data engineering and business outcomes across domains.',
+    'email-btn':  'Email me',
+    'proj-btn':   'View projects ↓',
+    'lang-label': 'Languages',
+
+    'loc-label':      'Location',
+    'loc-sub':        'Available to relocate · Europe & Asia',
+    'citizen-label':  'Citizenship & Authorization',
+    'citizen-val':    'Indian Citizen',
+    'citizen-sub':    'Valid French work authorization · Open to Europe & Asia',
+    'stack-label':    'Core stack',
+    'ai-label':       'AI Tools & Models',
+
+    'sec-exp':    'Experience',
+    'sec-proj':   'Projects',
+    'sec-free':   'Freelance & Consulting',
+    'sec-skills': 'Skills',
+    'sec-edu':    'Education',
+
+    'exp1-loc':   'Freelance · Remote',
+    'exp1-role':  'Freelance Data Analyst',
+    'exp1-badge': 'Consulting & Analytics',
+    'exp1-li1':   'Delivered end-to-end data analysis and reporting for 4 independent clients across fitness, sports, retail, and fintech domains',
+    'exp1-li2':   "Built client-specific dashboards, segmentation models, and data pipelines tailored to each business's operational needs",
+    'exp1-li3':   "Supported Summerpayami's retail expansion - analysis directly contributed to the launch of 2 new retail stores across Maharashtra",
+    'exp1-li4':   'Gathered and structured trading data for Algobrics to improve algorithmic automation and signal accuracy',
+
+    'exp2-loc':   'Mumbai, India',
+    'exp2-role':  'Healthcare Data Analyst',
+    'exp2-li1':   'Analyzed hospital operational data - patient flow, utilization, staffing - to improve cost efficiency and workflow performance',
+    'exp2-li2':   'Built KPI tracking dashboards for project milestones, resource usage, and budget adherence',
+    'exp2-li3':   'Partnered with architects, engineers, and hospital teams to translate operational data into actionable insights',
+
+    'exp3-loc':   'Marseille, France',
+    'exp3-role':  'Data Analyst Intern',
+    'exp3-badge': 'Trade & Quality Analytics',
+    'exp3-li1':   'Mined multi-source commercial and operational data for LATAM & Oceania trade performance; delivered daily KPI reports and ad-hoc analyses to Business Development Managers',
+    'exp3-li2':   'Handled trade compliance - classification and quality review of restricted commodities via HS codes; flagged and resolved exceptions cross-functionally',
+    'exp3-li3':   'Built automated dashboards in Power BI, Qlik Sense, and Excel VBA, reducing manual effort and improving governance-ready stakeholder access',
+    'exp3-li4':   'Supported post-signature data governance: validation checks, compliance reporting, process documentation, and mandate reporting accuracy',
+
+    'exp4-loc':   'Indore, India',
+    'exp4-role':  'Data Scientist Intern',
+    'exp4-li1':   'Built ETL pipelines and ML models (Random Forest, 79% accuracy) using Python & SQL on 50K+ records',
+    'exp4-li2':   'Developed a Flask API prototype for AI-driven automation - early experience with agentic data workflows',
+
+    'proj1-cat':       'Data Engineering · BI',
+    'proj1-desc':      'Real-time stateful engine for container repositioning in maritime logistics. Medallion Architecture pipeline integrating AIS vessel ETAs, Freightos market indices, and ECB financial indicators with predictive ETA deviation alerts and per-diem cost impact analysis.',
+    'proj1-highlight': 'Human-in-the-Loop AI workflow · Multi-sheet BI decision reports',
+
+    'proj2-cat':       'AI Automation · Compliance',
+    'proj2-desc':      'Agentic Python workflow for automated ledger validation and audit quality checks - bridging accounting and data analytics. Rule-based governance supporting EMIR & MiFID II compliance frameworks with full audit traceability.',
+    'proj2-highlight': 'Mandate termination validation · Audit traceability',
+
+    'proj3-cat':       'Machine Learning · Finance',
+    'proj3-desc':      'LSTM and Prophet models predicting EUR/JPY exchange rates on 20 years of Yahoo Finance data. Evaluated with RMSE - LSTM led on short-term, Prophet on long-term forecasts. Demonstrated AI synergy for reliable forex prediction.',
+    'proj3-highlight': 'LSTM + Prophet ensemble · 20yr historical analysis',
+
+    'proj4-cat':       'Clustering · User Analytics',
+    'proj4-desc':      'Analyzed user behavior data to segment app users by screen time and spending patterns. K-means clustering with Pandas and Plotly visualizations to reveal distinct user cohorts and behavioral drivers.',
+    'proj4-highlight': 'K-means clustering · Behavioral cohort analysis',
+
+    'proj5-cat':       'Research · Analytics',
+    'proj5-desc':      'Mixed-method research surveying 300+ gamers and interviewing industry experts to identify loyalty drivers. Statistical analysis revealed community engagement, personalized experiences, and reward systems as key retention factors.',
+    'proj5-highlight': '↑ 15–20% projected retention improvement',
+
+    'proj6-cat':       'Algorithmic Trading · Finance',
+    'proj6-desc':      'Momentum-based algorithmic trading system for EUR/JPY - buy/sell signal generation from price momentum, Yahoo Finance API data retrieval, and interactive Plotly visualizations of price and momentum trends.',
+    'proj6-highlight': 'Momentum strategy · Automated signal generation',
+
+    'free1-cat':  'Health & Wellness · Client Analytics',
+    'free1-meta': 'Anuya Zende · Certified Yoga Instructor',
+    'free1-desc': 'Analyzed student enrollment, session attendance, and engagement patterns to help a certified yoga instructor understand retention and growth trends. Delivered a clean reporting dashboard to track class performance and student progress over time.',
+
+    'free2-cat':  'Sports Performance · Data Tracking',
+    'free2-meta': 'Abhijit Purav · Licensed Air Pistol Trainer',
+    'free2-desc': 'Structured and analyzed athlete performance data for a licensed air pistol trainer. Built tracking models to identify performance trends, training consistency, and scoring patterns - enabling data-driven coaching decisions for competitive athletes.',
+
+    'free3-cat':       'Retail Expansion · Business Analytics',
+    'free3-meta':      'Imported Cycle Retail Shop · Maharashtra',
+    'free3-desc':      'Performed market and sales data analysis for an imported cycle retailer. Identified high-demand locations, customer segments, and revenue opportunities - insights that directly supported the successful launch of 2 new retail stores across Maharashtra.',
+    'free3-highlight': '↑ 2 new retail stores launched across Maharashtra',
+
+    'free4-cat':  'Fintech · Algorithmic Trading',
+    'free4-meta': 'Algorithm-based Trading Platform',
+    'free4-desc': "Gathered, cleaned, and structured financial market data to support an algorithm-based trading platform's automation pipeline. Improved data quality and coverage for better signal generation and reduced manual data handling in live trading workflows.",
+
+    'skill1-head': 'AI Tools & LLMs',
+    'skill2-head': 'Machine Learning & Data Science',
+    'skill3-head': 'Business Intelligence & Excel',
+    'skill4-head': 'Data Analysis',
+    'skill5-head': 'Data Management',
+    'skill6-head': 'Data Engineering',
+    'skill7-head': 'Automation & Collaboration',
+    'skill8-head': 'Ways of Working',
+
+    'edu1-degree': 'MSc - Data & Business Analytics (Finance)',
+    'edu2-degree': 'Post Graduate Program in Data Science',
+    'edu3-degree': 'Bachelor of Engineering - Electrical Engineering',
+
+    'modal-sub':             "Choose how you'd like to reach out",
+    'modal-email-label':     'Email',
+    'modal-email-alt-label': 'Email (alternate)',
+    'modal-phone-fr-label':  'Phone · France',
+    'modal-phone-in-label':  'Phone · India',
+
+    'contact-sup':    'Available now',
+    'contact-head':   "Let's build something<br><em>with data.</em>",
+    'contact-note':   'Open to full-time and contract roles in data analytics, analytics engineering, and BI.<br>Based in Rennes, France - available to relocate across Europe and Asia.',
+
+    'footer-deploy':  'Deployed on GitHub Pages',
+  },
+  fr: {
+    'nav-exp':    'Expérience',
+    'nav-free':   'Freelance',
+    'nav-proj':   'Projets',
+    'nav-skills': 'Compétences',
+    'nav-edu':    'Formation',
+    'nav-cta':    'Me contacter',
+    'status':     'Ouvert aux opportunités · Europe & Asie',
+    'role':       'Analyste de données · Data Scientist · Ingénieur analytique',
+    'bio':        "Je transforme des données complexes et multi-sources en tableaux de bord, pipelines et modèles qui aident les équipes à décider avec clarté. Des routes commerciales maritimes mondiales chez CMA CGM à l'analytique des flux hospitaliers, je fais le lien entre l'ingénierie des données et les résultats business dans plusieurs secteurs.",
+    'email-btn':  "M'écrire",
+    'proj-btn':   'Voir les projets ↓',
+    'lang-label': 'Langues',
+
+    'loc-label':      'Localisation',
+    'loc-sub':        'Disponible pour relocation · Europe & Asie',
+    'citizen-label':  'Citoyenneté & Autorisation',
+    'citizen-val':    'Citoyen indien',
+    'citizen-sub':    "Autorisation de travail française valide · Ouvert à l'Europe & l'Asie",
+    'stack-label':    'Outils principaux',
+    'ai-label':       'Outils & Modèles IA',
+
+    'sec-exp':    'Expérience',
+    'sec-proj':   'Projets',
+    'sec-free':   'Freelance & Conseil',
+    'sec-skills': 'Compétences',
+    'sec-edu':    'Formation',
+
+    'exp1-loc':   'Freelance · À distance',
+    'exp1-role':  'Analyste de données freelance',
+    'exp1-badge': 'Conseil & Analytique',
+    'exp1-li1':   'Réalisation d\'analyses de données et de rapports de bout en bout pour 4 clients indépendants dans les domaines du fitness, du sport, du commerce de détail et de la fintech',
+    'exp1-li2':   "Conception de tableaux de bord, de modèles de segmentation et de pipelines de données sur mesure adaptés aux besoins opérationnels de chaque entreprise",
+    'exp1-li3':   "Accompagnement de l'expansion commerciale de Summerpayami - l'analyse a directement contribué à l'ouverture de 2 nouveaux magasins dans le Maharashtra",
+    'exp1-li4':   "Collecte et structuration des données de trading pour Algobrics afin d'améliorer l'automatisation algorithmique et la précision des signaux",
+
+    'exp2-loc':   'Mumbai, Inde',
+    'exp2-role':  'Analyste de données santé',
+    'exp2-li1':   "Analyse des données opérationnelles hospitalières - flux de patients, utilisation, personnel - afin d'améliorer l'efficacité des coûts et la performance des processus",
+    'exp2-li2':   'Conception de tableaux de bord de suivi des indicateurs clés pour les jalons de projet, l\'utilisation des ressources et le respect du budget',
+    'exp2-li3':   'Collaboration avec les architectes, ingénieurs et équipes hospitalières pour transformer les données opérationnelles en informations exploitables',
+
+    'exp3-loc':   'Marseille, France',
+    'exp3-role':  'Stagiaire analyste de données',
+    'exp3-badge': 'Analytique commerciale & qualité',
+    'exp3-li1':   "Exploration de données commerciales et opérationnelles multi-sources pour la performance commerciale LATAM & Océanie ; remise de rapports d'indicateurs quotidiens et d'analyses ponctuelles aux responsables du développement commercial",
+    'exp3-li2':   'Gestion de la conformité commerciale - classification et contrôle qualité des marchandises réglementées via les codes SH ; identification et résolution des exceptions en transverse',
+    'exp3-li3':   "Conception de tableaux de bord automatisés sous Power BI, Qlik Sense et Excel VBA, réduisant l'effort manuel et améliorant l'accès des parties prenantes dans un cadre de gouvernance",
+    'exp3-li4':   "Support de la gouvernance des données post-signature : contrôles de validation, reporting de conformité, documentation des processus et exactitude du reporting des mandats",
+
+    'exp4-loc':   'Indore, Inde',
+    'exp4-role':  'Stagiaire data scientist',
+    'exp4-li1':   'Conception de pipelines ETL et de modèles de machine learning (Random Forest, 79 % de précision) avec Python & SQL sur plus de 50 000 enregistrements',
+    'exp4-li2':   "Développement d'un prototype d'API Flask pour l'automatisation pilotée par l'IA - première expérience des workflows de données agentiques",
+
+    'proj1-cat':       'Ingénierie des données · BI',
+    'proj1-desc':      "Moteur avec état en temps réel pour le repositionnement de conteneurs dans la logistique maritime. Pipeline en architecture médaillon intégrant les ETA des navires AIS, les indices de marché Freightos et les indicateurs financiers de la BCE, avec alertes prédictives d'écart d'ETA et analyse d'impact des coûts de surestaries.",
+    'proj1-highlight': 'Workflow IA avec supervision humaine · Rapports décisionnels BI multi-feuilles',
+
+    'proj2-cat':       'Automatisation IA · Conformité',
+    'proj2-desc':      "Workflow Python agentique pour la validation automatisée des écritures comptables et les contrôles qualité d'audit - à la croisée de la comptabilité et de l'analytique de données. Gouvernance à base de règles conforme aux cadres EMIR & MiFID II, avec traçabilité d'audit complète.",
+    'proj2-highlight': "Validation de résiliation de mandat · Traçabilité d'audit",
+
+    'proj3-cat':       'Machine Learning · Finance',
+    'proj3-desc':      'Modèles LSTM et Prophet prédisant les taux de change EUR/JPY sur 20 ans de données Yahoo Finance. Évalués par RMSE - LSTM en tête à court terme, Prophet à long terme. Démonstration d\'une synergie IA pour une prévision forex fiable.',
+    'proj3-highlight': 'Ensemble LSTM + Prophet · Analyse historique sur 20 ans',
+
+    'proj4-cat':       'Clustering · Analytique utilisateur',
+    'proj4-desc':      "Analyse des données comportementales pour segmenter les utilisateurs d'application selon le temps d'écran et les habitudes de dépense. Clustering K-means avec Pandas et visualisations Plotly pour révéler des cohortes d'utilisateurs distinctes et leurs facteurs comportementaux.",
+    'proj4-highlight': 'Clustering K-means · Analyse de cohortes comportementales',
+
+    'proj5-cat':       'Recherche · Analytique',
+    'proj5-desc':      "Recherche à méthodes mixtes auprès de plus de 300 joueurs et d'experts du secteur pour identifier les facteurs de fidélité. L'analyse statistique a révélé l'engagement communautaire, la personnalisation de l'expérience et les systèmes de récompense comme facteurs clés de rétention.",
+    'proj5-highlight': '↑ Amélioration projetée de la rétention de 15 à 20 %',
+
+    'proj6-cat':       'Trading algorithmique · Finance',
+    'proj6-desc':      "Système de trading algorithmique basé sur le momentum pour l'EUR/JPY - génération de signaux d'achat/vente à partir du momentum des prix, récupération des données via l'API Yahoo Finance et visualisations Plotly interactives des tendances de prix et de momentum.",
+    'proj6-highlight': 'Stratégie de momentum · Génération de signaux automatisée',
+
+    'free1-cat':  'Santé & bien-être · Analytique client',
+    'free1-meta': 'Anuya Zende · Instructrice de yoga certifiée',
+    'free1-desc': "Analyse des inscriptions, de la fréquentation des séances et des tendances d'engagement pour aider une instructrice de yoga certifiée à comprendre la rétention et la croissance. Livraison d'un tableau de bord clair pour suivre la performance des cours et la progression des élèves dans le temps.",
+
+    'free2-cat':  'Performance sportive · Suivi de données',
+    'free2-meta': 'Abhijit Purav · Entraîneur agréé de tir au pistolet',
+    'free2-desc': "Structuration et analyse des données de performance d'athlètes pour un entraîneur agréé de tir au pistolet. Conception de modèles de suivi pour identifier les tendances de performance, la régularité d'entraînement et les schémas de score - permettant des décisions d'entraînement fondées sur les données pour des athlètes de compétition.",
+
+    'free3-cat':       'Expansion commerciale · Analytique business',
+    'free3-meta':      'Magasin de cycles importés · Maharashtra',
+    'free3-desc':      "Analyse des données de marché et de ventes pour un revendeur de cycles importés. Identification des zones à forte demande, des segments de clientèle et des opportunités de revenu - des enseignements qui ont directement soutenu l'ouverture réussie de 2 nouveaux magasins dans le Maharashtra.",
+    'free3-highlight': '↑ 2 nouveaux magasins ouverts dans le Maharashtra',
+
+    'free4-cat':  'Fintech · Trading algorithmique',
+    'free4-meta': 'Plateforme de trading algorithmique',
+    'free4-desc': "Collecte, nettoyage et structuration de données de marché financier pour soutenir le pipeline d'automatisation d'une plateforme de trading algorithmique. Amélioration de la qualité et de la couverture des données pour une meilleure génération de signaux et une réduction du traitement manuel dans les workflows de trading en direct.",
+
+    'skill1-head': 'Outils IA & LLM',
+    'skill2-head': 'Machine Learning & Data Science',
+    'skill3-head': 'Business Intelligence & Excel',
+    'skill4-head': 'Analyse de données',
+    'skill5-head': 'Gestion des données',
+    'skill6-head': 'Ingénierie des données',
+    'skill7-head': 'Automatisation & Collaboration',
+    'skill8-head': 'Méthodes de travail',
+
+    'edu1-degree': 'Master - Data & Business Analytics (Finance)',
+    'edu2-degree': 'Programme de troisième cycle en data science',
+    'edu3-degree': "Diplôme d'ingénieur - Génie électrique",
+
+    'modal-sub':             'Choisissez comment vous souhaitez me contacter',
+    'modal-email-label':     'E-mail',
+    'modal-email-alt-label': 'E-mail (alternatif)',
+    'modal-phone-fr-label':  'Téléphone · France',
+    'modal-phone-in-label':  'Téléphone · Inde',
+
+    'contact-sup':    'Disponible maintenant',
+    'contact-head':   'Construisons quelque chose<br><em>avec les données.</em>',
+    'contact-note':   'Ouvert aux postes à temps plein et aux missions en analytique de données, ingénierie analytique et BI.<br>Basé à Rennes, France - disponible pour relocation en Europe et en Asie.',
+
+    'footer-deploy':  'Déployé sur GitHub Pages',
+  },
+  de: {
+    'nav-exp':    'Erfahrung',
+    'nav-free':   'Freelance',
+    'nav-proj':   'Projekte',
+    'nav-skills': 'Fähigkeiten',
+    'nav-edu':    'Ausbildung',
+    'nav-cta':    'Kontakt aufnehmen',
+    'status':     'Offen für Möglichkeiten · Europa & Asien',
+    'role':       'Datenanalyst · Data Scientist · Analytics-Ingenieur',
+    'bio':        'Ich verwandle unübersichtliche, mehrquellige Daten in Dashboards, Pipelines und Modelle, die Teams zu klaren Entscheidungen verhelfen. Von globalen Schifffahrtsrouten bei CMA CGM bis zur Analytik von Krankenhausabläufen verbinde ich Data Engineering mit greifbaren Geschäftsergebnissen über verschiedene Branchen hinweg.',
+    'email-btn':  'E-Mail senden',
+    'proj-btn':   'Projekte ansehen ↓',
+    'lang-label': 'Sprachen',
+
+    'loc-label':      'Standort',
+    'loc-sub':        'Bereit zur Umsiedlung · Europa & Asien',
+    'citizen-label':  'Staatsangehörigkeit & Arbeitserlaubnis',
+    'citizen-val':    'Indischer Staatsbürger',
+    'citizen-sub':    'Gültige französische Arbeitserlaubnis · Offen für Europa & Asien',
+    'stack-label':    'Kern-Tools',
+    'ai-label':       'KI-Tools & Modelle',
+
+    'sec-exp':    'Erfahrung',
+    'sec-proj':   'Projekte',
+    'sec-free':   'Freelance & Beratung',
+    'sec-skills': 'Fähigkeiten',
+    'sec-edu':    'Ausbildung',
+
+    'exp1-loc':   'Freelance · Remote',
+    'exp1-role':  'Freelance Datenanalyst',
+    'exp1-badge': 'Beratung & Analytik',
+    'exp1-li1':   'End-to-End-Datenanalyse und Reporting für 4 unabhängige Kunden aus den Bereichen Fitness, Sport, Einzelhandel und Fintech geliefert',
+    'exp1-li2':   'Kundenspezifische Dashboards, Segmentierungsmodelle und Datenpipelines entwickelt, zugeschnitten auf die betrieblichen Anforderungen jedes Unternehmens',
+    'exp1-li3':   'Die Einzelhandelsexpansion von Summerpayami unterstützt - die Analyse trug direkt zur Eröffnung von 2 neuen Filialen in Maharashtra bei',
+    'exp1-li4':   'Handelsdaten für Algobrics gesammelt und strukturiert, um die algorithmische Automatisierung und Signalgenauigkeit zu verbessern',
+
+    'exp2-loc':   'Mumbai, Indien',
+    'exp2-role':  'Datenanalyst im Gesundheitswesen',
+    'exp2-li1':   'Betriebliche Krankenhausdaten analysiert - Patientenfluss, Auslastung, Personaleinsatz - zur Verbesserung von Kosteneffizienz und Prozessleistung',
+    'exp2-li2':   'KPI-Tracking-Dashboards für Projektmeilensteine, Ressourcennutzung und Budgeteinhaltung entwickelt',
+    'exp2-li3':   'Zusammenarbeit mit Architekten, Ingenieuren und Krankenhausteams, um Betriebsdaten in umsetzbare Erkenntnisse zu übersetzen',
+
+    'exp3-loc':   'Marseille, Frankreich',
+    'exp3-role':  'Praktikant Datenanalyse',
+    'exp3-badge': 'Handels- & Qualitätsanalytik',
+    'exp3-li1':   'Mehrquellige kommerzielle und operative Daten für die Handelsleistung in LATAM & Ozeanien ausgewertet; tägliche KPI-Berichte und Ad-hoc-Analysen an Business Development Manager geliefert',
+    'exp3-li2':   'Handelscompliance bearbeitet - Klassifizierung und Qualitätsprüfung eingeschränkter Güter über HS-Codes; Ausnahmen bereichsübergreifend erkannt und gelöst',
+    'exp3-li3':   'Automatisierte Dashboards in Power BI, Qlik Sense und Excel VBA entwickelt, wodurch manueller Aufwand reduziert und der governance-konforme Zugang für Stakeholder verbessert wurde',
+    'exp3-li4':   'Datenverwaltung nach Vertragsunterzeichnung unterstützt: Validierungsprüfungen, Compliance-Reporting, Prozessdokumentation und Genauigkeit der Mandatsberichterstattung',
+
+    'exp4-loc':   'Indore, Indien',
+    'exp4-role':  'Praktikant Data Science',
+    'exp4-li1':   'ETL-Pipelines und ML-Modelle (Random Forest, 79 % Genauigkeit) mit Python & SQL auf über 50.000 Datensätzen entwickelt',
+    'exp4-li2':   'Einen Flask-API-Prototyp für KI-gesteuerte Automatisierung entwickelt - erste Erfahrung mit agentischen Datenworkflows',
+
+    'proj1-cat':       'Data Engineering · BI',
+    'proj1-desc':      'Zustandsbehaftete Echtzeit-Engine für die Repositionierung von Containern in der Seelogistik. Medallion-Architektur-Pipeline, die AIS-Schiffs-ETAs, Freightos-Marktindizes und EZB-Finanzindikatoren integriert, mit prädiktiven ETA-Abweichungswarnungen und Analyse der Kostenauswirkungen von Standgeldern.',
+    'proj1-highlight': 'KI-Workflow mit Human-in-the-Loop · Mehrblättrige BI-Entscheidungsberichte',
+
+    'proj2-cat':       'KI-Automatisierung · Compliance',
+    'proj2-desc':      'Agentischer Python-Workflow für automatisierte Hauptbuchvalidierung und Audit-Qualitätsprüfungen - eine Brücke zwischen Buchhaltung und Datenanalytik. Regelbasierte Governance zur Unterstützung der EMIR- & MiFID-II-Compliance-Rahmenwerke mit vollständiger Audit-Nachverfolgbarkeit.',
+    'proj2-highlight': 'Validierung der Mandatsbeendigung · Audit-Nachverfolgbarkeit',
+
+    'proj3-cat':       'Machine Learning · Finanzen',
+    'proj3-desc':      'LSTM- und Prophet-Modelle zur Vorhersage von EUR/JPY-Wechselkursen auf Basis von 20 Jahren Yahoo-Finance-Daten. Bewertet mit RMSE - LSTM führend kurzfristig, Prophet langfristig. Zeigt die Synergie von KI für zuverlässige Devisenprognosen.',
+    'proj3-highlight': 'LSTM + Prophet Ensemble · 20-jährige historische Analyse',
+
+    'proj4-cat':       'Clustering · Nutzeranalytik',
+    'proj4-desc':      'Nutzerverhaltensdaten analysiert, um App-Nutzer nach Bildschirmzeit und Ausgabemustern zu segmentieren. K-Means-Clustering mit Pandas und Plotly-Visualisierungen zur Aufdeckung unterschiedlicher Nutzerkohorten und Verhaltenstreiber.',
+    'proj4-highlight': 'K-Means-Clustering · Verhaltensbezogene Kohortenanalyse',
+
+    'proj5-cat':       'Forschung · Analytik',
+    'proj5-desc':      'Forschung mit gemischten Methoden unter Befragung von über 300 Gamern und Interviews mit Branchenexperten zur Identifizierung von Loyalitätstreibern. Die statistische Analyse ergab Community-Engagement, personalisierte Erlebnisse und Belohnungssysteme als zentrale Bindungsfaktoren.',
+    'proj5-highlight': '↑ Prognostizierte Bindungsverbesserung von 15-20 %',
+
+    'proj6-cat':       'Algorithmischer Handel · Finanzen',
+    'proj6-desc':      'Momentum-basiertes algorithmisches Handelssystem für EUR/JPY - Generierung von Kauf-/Verkaufssignalen aus Preismomentum, Datenabruf über die Yahoo-Finance-API und interaktive Plotly-Visualisierungen von Preis- und Momentumtrends.',
+    'proj6-highlight': 'Momentum-Strategie · Automatisierte Signalgenerierung',
+
+    'free1-cat':  'Gesundheit & Wellness · Kundenanalytik',
+    'free1-meta': 'Anuya Zende · Zertifizierte Yogalehrerin',
+    'free1-desc': 'Analyse von Anmeldungen, Teilnahme an Sitzungen und Engagement-Mustern, um einer zertifizierten Yogalehrerin zu helfen, Bindung und Wachstumstrends zu verstehen. Bereitstellung eines übersichtlichen Reporting-Dashboards zur Verfolgung der Kursleistung und des Fortschritts der Teilnehmer über die Zeit.',
+
+    'free2-cat':  'Sportliche Leistung · Datentracking',
+    'free2-meta': 'Abhijit Purav · Lizenzierter Luftpistolentrainer',
+    'free2-desc': 'Strukturierung und Analyse von Athletenleistungsdaten für einen lizenzierten Luftpistolentrainer. Entwicklung von Tracking-Modellen zur Identifizierung von Leistungstrends, Trainingskonsistenz und Punktemustern - ermöglicht datengestützte Trainingsentscheidungen für Wettkampfathleten.',
+
+    'free3-cat':       'Einzelhandelsexpansion · Business-Analytik',
+    'free3-meta':      'Fahrradimport-Einzelhandelsgeschäft · Maharashtra',
+    'free3-desc':      'Markt- und Verkaufsdatenanalyse für einen Importeur von Fahrrädern durchgeführt. Standorte mit hoher Nachfrage, Kundensegmente und Umsatzchancen identifiziert - Erkenntnisse, die direkt zur erfolgreichen Eröffnung von 2 neuen Filialen in Maharashtra beitrugen.',
+    'free3-highlight': '↑ 2 neue Filialen in Maharashtra eröffnet',
+
+    'free4-cat':  'Fintech · Algorithmischer Handel',
+    'free4-meta': 'Algorithmusbasierte Handelsplattform',
+    'free4-desc': 'Finanzmarktdaten gesammelt, bereinigt und strukturiert, um die Automatisierungspipeline einer algorithmusbasierten Handelsplattform zu unterstützen. Datenqualität und -abdeckung für bessere Signalgenerierung verbessert und manuelle Datenverarbeitung in Live-Handelsworkflows reduziert.',
+
+    'skill1-head': 'KI-Tools & LLMs',
+    'skill2-head': 'Machine Learning & Data Science',
+    'skill3-head': 'Business Intelligence & Excel',
+    'skill4-head': 'Datenanalyse',
+    'skill5-head': 'Datenmanagement',
+    'skill6-head': 'Data Engineering',
+    'skill7-head': 'Automatisierung & Zusammenarbeit',
+    'skill8-head': 'Arbeitsweisen',
+
+    'edu1-degree': 'MSc - Data & Business Analytics (Finance)',
+    'edu2-degree': 'Postgraduiertenprogramm in Data Science',
+    'edu3-degree': 'Bachelor of Engineering - Elektrotechnik',
+
+    'modal-sub':             'Wählen Sie, wie Sie mich kontaktieren möchten',
+    'modal-email-label':     'E-Mail',
+    'modal-email-alt-label': 'E-Mail (alternativ)',
+    'modal-phone-fr-label':  'Telefon · Frankreich',
+    'modal-phone-in-label':  'Telefon · Indien',
+
+    'contact-sup':    'Jetzt verfügbar',
+    'contact-head':   'Lass uns etwas<br><em>mit Daten aufbauen.</em>',
+    'contact-note':   'Offen für Vollzeit- und Vertragsstellen in Datenanalytik, Analytics Engineering und BI.<br>Wohnhaft in Rennes, Frankreich - bereit zur Umsiedlung nach Europa und Asien.',
+
+    'footer-deploy':  'Bereitgestellt auf GitHub Pages',
+  }
+};
+
+function setLang(lang) {
+  // Update buttons
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+  // Swap all tagged elements
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key]) el.innerHTML = t[key];
+  });
+
+  // Update html lang attr
+  document.documentElement.lang = lang;
+}
+</script>
+
+</body>
+</html>
